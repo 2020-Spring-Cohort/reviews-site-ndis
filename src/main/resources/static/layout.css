@@ -1,0 +1,22 @@
+
+
+.mainTitle{
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: auto;
+height: auto;
+
+}
+
+
+.mainBody{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    
+    display: flex;
+    width: auto;
+    height: auto;
+
+}
