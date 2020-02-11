@@ -15,3 +15,25 @@
     .mainBody{
         background-color: rosybrown;
     }
+
+    .reviewTitle{
+      background-color: honeydew;
+  }
+  
+  footer{
+    background-color: greenyellow
+      
+  }
+  
+  .review-text{
+    background-color: fuchsia
+  }
+  
+  .indexHash{
+    background-color: rebeccapurple
+  
+  }
+  
+  .hashBody{
+    background-color: royalblue
+  }

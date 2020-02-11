@@ -123,9 +123,9 @@ grid-row: 2;
 }
 .reviewTitle{
     display: flex;
-justify-content: center;
-width: auto;
-height: auto;
+    justify-content: center;
+    width: auto;
+    height: auto;
 }
 
 footer{
@@ -137,6 +137,8 @@ footer{
 
 .review-photo{
     display: grid;
+    margin: 25px;
+    padding: 25px;
     justify-content: center;
 }
 
