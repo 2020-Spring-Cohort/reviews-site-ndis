@@ -12,8 +12,20 @@ height: auto;
 
 .mainBody{
     display: grid;
-    grid-template-columns: 400px 400px;
-    grid-template-rows: 400px 400px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    margin: 50px;
+    padding: 50px;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+}
+
+.indexBody{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 100px;
     margin: 50px;
     padding: 50px;
     justify-content: center;
