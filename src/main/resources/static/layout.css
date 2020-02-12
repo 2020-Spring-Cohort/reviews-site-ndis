@@ -44,6 +44,7 @@ display: flex;
     justify-content: center;
     width: auto;
     height: auto;
+    /* align-items: center; */
 
 }
 
@@ -59,6 +60,12 @@ display: flex;
 
 }
 
+.mainComputers{
+    flex-direction: column;
+    display: flex;
+justify-content: center;
+margin: auto;
+}
 .hp1{
 grid-column: 1;
 grid-row: 1;
@@ -163,6 +170,7 @@ footer{
     margin: 25px;
     padding: 25px;
     justify-content: center;
+  
 }
 
 .indexHash{
