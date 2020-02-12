@@ -9,6 +9,29 @@ height: auto;
 
 }
 
+.categories-button{
+justify-content: center;
+display: flex;
+
+}
+
+.categories-button  a:link, a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+.hashtags-button{
+justify-content: center;
+display: flex;
+}
+.hashtags-button a:link, a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
 
 .mainBody{
     display: grid;
