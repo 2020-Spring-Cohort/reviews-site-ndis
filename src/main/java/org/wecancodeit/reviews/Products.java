@@ -1,12 +1,12 @@
 package org.wecancodeit.reviews;
 
-public class Review {
+public class Products {
     String laptopName;
     String laptopBrand;
 //    String hashtag;
 
 
-    public Review(String laptopName, String laptopBrand) {
+    public Products(String laptopName, String laptopBrand) {
         this.laptopName = laptopName;
         this.laptopBrand = laptopBrand;
     }
