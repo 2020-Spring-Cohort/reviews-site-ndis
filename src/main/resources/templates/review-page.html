@@ -1,6 +1,6 @@
-<html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">>
 
-</html>
+
 <head>
 <meta charset="UTF-8">
     <title>Review </title>
@@ -13,33 +13,33 @@
 <div class="indexHash">
 
     <div class="categories-button">
-        
         <a href="categories.html">Categories</a>
-
     </div>
 
     <div class="hashtags-button">
-       <a href="Hashtags.html">#Hashtags</a>
+        <a href="Hashtags.html">#Hashtags</a>
 
     </div>
 
-
-  
 </div>
 
 
 
 
 <div>
-
-    <h1 class="reviewTitle">
-        Review Title
-    </h1>
-
+    <h1 th:text="${laptop-brand}" class="laptop-details__brand">MSI</h1>
+    <h2 th:text="${laptop-name}" class="laptop-details__name">Predator</h2>
 </div>
+
 
 <body>
     <div class="review-photo"><img src="./Images/MSI GF63 Thin 9RCX -615.jpg" alt="This is MSI laptop picture"></div>
+    <p th:text="${laptop-model}" class="laptop-details__model">2345GNTW</p>
 </body>
 
-<footer class= "review-text">[Review Text]</footer>
+<footer>
+<p th:text="${laptop-review}" class="laptop-details__review"> this is a review of a MSI laptop</p>
+</footer>
+
+
+</html>
