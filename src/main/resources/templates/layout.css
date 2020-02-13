@@ -149,18 +149,29 @@ grid-row: 2;
     grid-row: 2;
 }
 
-.laptop-brand{
-    display: flex;
-    justify-content: center;
-    width: auto;
-    height: auto;
-}
 .laptop-details__brand{
         display: flex;
         justify-content: center;
         width: auto;
         height: auto;
-    
+}
+.laptop-details__name{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.laptop-details__model{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.laptop-details__review{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
 }
 
 footer{
