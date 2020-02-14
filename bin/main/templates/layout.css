@@ -1,0 +1,208 @@
+
+
+.mainTitle{
+display: flex;
+
+justify-content: center;
+width: auto;
+height: auto;
+
+}
+
+.categories-button{
+justify-content: center;
+display: flex;
+
+}
+
+.categories-button  a:link, a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+.hashtags-button{
+justify-content: center;
+display: flex;
+}
+.hashtags-button a:link, a:visited
+{
+    color: black;
+    text-decoration: none;
+}
+
+
+.mainBody{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px 150px;
+    column-gap: 50px;
+    row-gap: 50px;
+    margin: 25px;
+    padding: 25px;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+}
+
+.indexBody{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 100px;
+    margin: 50px;
+    padding: 50px;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+}
+
+.mainComputers{
+    flex-direction: column;
+    display: flex;
+justify-content: center;
+margin: auto;
+}
+.hp1{
+grid-column: 1;
+grid-row: 1;
+display: flex;
+justify-content: center;
+}
+
+.hp2{
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+justify-content: center;
+    }
+
+.hp3{
+    grid-column: 1;
+     grid-row: 2;
+        }
+
+.hp4{
+    grid-column: 2;
+    grid-row: 2;
+    }
+
+.msi1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.msi2{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.msi3{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.msi4{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.alien1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.alien2{
+grid-column: 2;
+grid-row: 1;
+}
+
+.alien3{
+grid-column: 1;
+grid-row: 2;
+}
+
+.alien4{
+grid-column: 2;
+grid-row: 2;
+}
+
+.leno1{
+grid-column: 1;
+grid-row: 1;
+}
+
+.leno2{
+grid-column: 2;
+grid-row: 1;
+}
+    
+.leno3{
+grid-column: 1;
+grid-row: 2;
+}
+
+.leno4{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.laptop-details__brand{
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: auto;
+}
+.laptop-details__name{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.laptop-details__model{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.laptop-details__review{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.review-photo{
+    display: grid;
+    margin: 25px;
+    padding: 25px;
+    justify-content: center;
+  
+}
+
+.indexHash{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    column-gap: 50px;
+    margin: 25px;
+    padding: 25px;
+    justify-content: center;
+    width: auto;
+    height: auto;
+
+}
+
+.hashBody{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
