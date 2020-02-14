@@ -30,8 +30,8 @@ public class CategoriesControllerTest {
 
     @Test
     public void categoryControllerShouldInstantiate() throws Exception {
-        Categories testCampus = new Categories("MSI");
-        List<Categories> categoriesCollection = Collections.singletonList(testCampus);
+        Categories testCategories = new Categories("MSI", "asjhdbf");
+        List<Categories> categoriesCollection = Collections.singletonList(testCategories);
         when(mockStorage.findAllCategories()).thenReturn(categoriesCollection);
         mockMvc.perform(get("/categories"))
                 .andDo(print())
@@ -42,7 +42,7 @@ public class CategoriesControllerTest {
     }
     @Test
     public void shouldReturnViewWithOneCategory(){
-        Categories testCategory = new Categories("Brands");
+        Categories testCategory = new Categories("Brands","asdjfb");
         when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
 
         underTest.displaySingleCategory("MSI", mockModel);
@@ -54,7 +54,7 @@ public class CategoriesControllerTest {
     @Test
     public void shouldReturnViewNamedCategoryWhenDisplaySingleCategory(){
         String viewName = underTest.displaySingleCategory("test", mockModel);
-        assertThat(viewName).isEqualTo("CategoryView");
+        assertThat(viewName).isEqualTo("categories");
     }
 
 }

@@ -24,7 +24,7 @@ public class CategoriesController {
 @RequestMapping ("/categories/{categoriesBrand}")
     public String displaySingleCategory(@PathVariable String categoriesBrand, Model model){
         Categories retrievedCategory = categoriesStorage.findCategoryByBrand(categoriesBrand);
-        model.addAttribute("Categories", retrievedCategory);
+        model.addAttribute("categories", retrievedCategory);
         return "categories";
     }
 

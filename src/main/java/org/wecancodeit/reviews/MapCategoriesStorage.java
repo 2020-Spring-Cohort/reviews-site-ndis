@@ -22,7 +22,7 @@ public class MapCategoriesStorage implements CategoriesStorage {
     }
 
     @Override
-    public Categories findCategoryByBrand(String categoryBrand) {
-        return findCategoryByBrand("");
+    public Categories findCategoryByBrand(String categoryBrand){
+        return findCategoryByBrand("MSI");
     }
 }

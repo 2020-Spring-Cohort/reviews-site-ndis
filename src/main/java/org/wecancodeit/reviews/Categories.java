@@ -5,25 +5,23 @@ import java.util.Objects;
 public class Categories {
     private String brand;
     private String name;
-    private String modelNumber;
+
+
+    public String getBrand() {
+        return brand;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String getModelNumber() {
-        return modelNumber;
-    }
 
-    public Categories(String brand, String name, String modelNumber){
+
+    public Categories(String brand, String name){
 
         this.brand = brand;
         this.name = name;
-        this.modelNumber = modelNumber;
-    }
 
-    public String getBrand() {
-        return brand;
     }
 
     @Override
@@ -36,6 +34,6 @@ public class Categories {
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand);
+        return Objects.hash(name);
     }
 }

@@ -16,13 +16,11 @@ public class Populator implements CommandLineRunner {
         this.categoriesStorage = categoriesStorage;
     }
         @Override
-        public void run (String... args) throws Exception {
+    public void run (String... args) throws Exception {
 
-
-            Categories hp = new Categories("HP");
-            categoriesStorage.store(hp);
-            categoriesStorage.store(new Categories("AlienWare"));
-            categoriesStorage.store(new Categories("Dell"));
-            categoriesStorage.store(new Categories("MSI"));
+            categoriesStorage.store(new Categories("HP","akdjsfnka"));
+            categoriesStorage.store(new Categories("AlienWare","fnasjdnfasn"));
+            categoriesStorage.store(new Categories("Dell","fdgdg"));
+            categoriesStorage.store(new Categories("MSI","asdfaf"));
         }
     }
