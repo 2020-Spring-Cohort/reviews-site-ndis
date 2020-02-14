@@ -54,7 +54,7 @@ public class CategoriesControllerTest {
     @Test
     public void shouldReturnViewNamedCategoryWhenDisplaySingleCategory(){
         String viewName = underTest.displaySingleCategory("test", mockModel);
-        assertThat(viewName).isEqualTo("categories");
+        assertThat(viewName).isEqualTo("Laptops");
     }
 
 }

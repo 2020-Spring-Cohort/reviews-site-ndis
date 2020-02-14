@@ -23,6 +23,6 @@ public class MapCategoriesStorage implements CategoriesStorage {
 
     @Override
     public Categories findCategoryByBrand(String categoryBrand){
-        return findCategoryByBrand("MSI");
+        return categoryList.get(categoryBrand);
     }
 }
