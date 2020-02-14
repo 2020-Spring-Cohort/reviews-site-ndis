@@ -18,7 +18,7 @@ public class CategoriesController {
     @RequestMapping("/categories")
     public String displayCategories(Model model){
         model.addAttribute("categories", categoriesStorage.findAllCategories());
-        return "categoriesview";
+        return "categories";
     }
 
 }

@@ -7,7 +7,7 @@ public class Review {
     String hashTag;
 
 
-    public Review(String laptopName, String laptopBrand, String hashTag, String reviewText) {
+    public Review  (String laptopName, String laptopBrand, String hashTag, String reviewText) {
         this.laptopName = laptopName;
         this.laptopBrand = laptopBrand;
         this.hashTag = hashTag;

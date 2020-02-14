@@ -28,7 +28,7 @@ public class CategoriesControllerTest {
         Categories testCampus = new Categories("MSI");
         List<Categories> categoriesCollection = Collections.singletonList(testCampus);
         when(mockStorage.findAllCategories()).thenReturn(categoriesCollection);
-        mockMvc.perform(get("/campuses"))
+        mockMvc.perform(get("/categories"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("categoriesView"))
