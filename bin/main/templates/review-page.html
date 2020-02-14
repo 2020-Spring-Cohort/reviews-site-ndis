@@ -1,4 +1,4 @@
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 
 <head>
@@ -25,18 +25,18 @@
 
 
 <div>
-    <h1 th:text="${laptop-brand}" class="laptop-details__brand">MSI</h1>
-    <h2 th:text="${laptop-name}" class="laptop-details__name">Predator</h2>
+    <h1 th:text="${Review.laptopBrand}" class="laptop-details__brand">MSI</h1>
+    <h2 th:text="${Review.laptopName}" class="laptop-details__name">Predator</h2>
 </div>
 
 
 <body>
     <div class="review-photo"><img src="./Images/MSI GF63 Thin 9RCX -615.jpg" alt="This is MSI laptop picture"></div>
-    <p th:text="${laptop-model}" class="laptop-details__model">2345GNTW</p>
+    <p th:text="${Review.laptopModel}" class="laptop-details__model">2345GNTW</p>
 </body>
 
 <footer>
-<p th:text="${laptop-review}" class="laptop-details__review"> this is a review of a MSI laptop</p>
+<p th:text="${Review.reviewText}" class="laptop-details__review"> this is a review of a MSI laptop</p>
 </footer>
 
 

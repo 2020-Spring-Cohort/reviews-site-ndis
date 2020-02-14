@@ -3,10 +3,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.ui.Model;
+
 import java.util.Collections;
 import java.util.List;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -15,9 +18,11 @@ public class CategoriesControllerTest {
     private MockMvc mockMvc;
     private CategoriesController underTest;
     private CategoriesStorage mockStorage;
+    private Model mockModel;
 
     @BeforeEach
     public void setUp() {
+        mockModel = mock(Model.class);
         mockStorage = mock(CategoriesStorage.class);
         underTest = new CategoriesController(mockStorage);
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
@@ -34,6 +39,22 @@ public class CategoriesControllerTest {
                 .andExpect(view().name("categoriesView"))
                 .andExpect(model().attributeExists("categories"))
                 .andExpect(model().attribute("categories", categoriesCollection));
+    }
+    @Test
+    public void shouldReturnViewWithOneCategory(){
+        Categories testCategory = new Categories("Brands");
+        when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
+
+        underTest.displaySingleCategory("MSI", mockModel);
+
+        verify(mockStorage).findCategoryByBrand("MSI");
+        verify(mockModel).addAttribute("category",testCategory);
+    }
+
+    @Test
+    public void shouldReturnViewNamedCategoryWhenDisplaySingleCategory(){
+        String viewName = underTest.displaySingleCategory("test", mockModel);
+        assertThat(viewName).isEqualTo("CategoryView");
     }
 
 }

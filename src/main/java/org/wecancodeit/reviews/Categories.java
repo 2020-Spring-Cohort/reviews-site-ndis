@@ -1,13 +1,25 @@
 package org.wecancodeit.reviews;
-
 import java.util.Objects;
+
 
 public class Categories {
     private String brand;
+    private String name;
+    private String modelNumber;
 
-    public Categories(String brand){
+    public String getName() {
+        return name;
+    }
+
+    public String getModelNumber() {
+        return modelNumber;
+    }
+
+    public Categories(String brand, String name, String modelNumber){
 
         this.brand = brand;
+        this.name = name;
+        this.modelNumber = modelNumber;
     }
 
     public String getBrand() {

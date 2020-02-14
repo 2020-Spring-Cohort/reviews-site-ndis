@@ -20,4 +20,9 @@ public class MapCategoriesStorage implements CategoriesStorage {
     public void store(Categories categories) {
         categoryList.put(categories.getBrand(),categories);
     }
+
+    @Override
+    public Categories findCategoryByBrand(String categoryBrand) {
+        return findCategoryByBrand("");
+    }
 }
