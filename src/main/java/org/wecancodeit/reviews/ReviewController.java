@@ -19,9 +19,9 @@ public class ReviewController {
     }
     @RequestMapping("/review-page/{reviewLaptopName}")
     public String displaySingleReview(@PathVariable String reviewLaptopName, Model model){
-        Review retrievedReview = reviewStorage.findReviewByName(reviewLaptopName);
-        model.addAttribute("review", retrievedReview);
-        return "Review";
+        Review retrievedReview = reviewStorage.findReviewByLaptopName(reviewLaptopName);
+        model.addAttribute("review-page", retrievedReview);
+        return "review-pageView";
     }
 
 }
