@@ -29,30 +29,19 @@ public class ReviewControllerTest {
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
     }
 
-    @Test
-    public void reviewControllerShouldInstantiate() throws Exception {
-        Review testReview = new Review("testLaptopName", "testLaptopBrand", "testHashtag", "testReviewText", "testLaptopModel");
-        List<Review> reviewCollection = Collections.singletonList(testReview);
-        when(mockStorage.findAllReviews()).thenReturn(reviewCollection);
-        mockMvc.perform(get("/review-page"))
-                .andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(view().name("review-pageView"))
-                .andExpect(model().attributeExists("review-page"))
-                .andExpect(model().attribute("review-page", reviewCollection));
-    }
+
 
     @Test
     public void shouldReturnViewWithOneReview(){
         Review testReview = new Review("testName", "testBrand", "testHashtag", "testReviewText", "testLaptopModel");
-        when(mockStorage.findReviewByLaptopName("testName")).thenReturn(testReview);
+        when(mockStorage.findReviewByLaptopName("testReviewLaptopName")).thenReturn(testReview);
         underTest.displaySingleReview("testReviewLaptopName", mockModel);
         verify(mockStorage).findReviewByLaptopName("testReviewLaptopName");
-        verify(mockModel).addAttribute("review-page", testReview);
+        verify(mockModel).addAttribute("review", testReview);
     }
 
     @Test
-    public void shouldReturnViewNamedCategoryWhenDisplaySingleReview(){
+    public void shouldReturnViewNamedReviewPageViewWhenDisplaySingleReview(){
         String viewName = underTest.displaySingleReview("testReviewLaptopName", mockModel);
         assertThat(viewName).isEqualTo("review-pageView");
     }

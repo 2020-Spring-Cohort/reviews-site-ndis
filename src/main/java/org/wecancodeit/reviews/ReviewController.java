@@ -12,15 +12,11 @@ public class ReviewController {
     public ReviewController(ReviewStorage reviewStorage){
         this.reviewStorage = reviewStorage;
     }
-    @RequestMapping("/review-page")
-    public String displayReview(Model model){
-        model.addAttribute("review-page", reviewStorage.findAllReviews());
-        return "review-pageView";
-    }
+
     @RequestMapping("/review-page/{reviewLaptopName}")
     public String displaySingleReview(@PathVariable String reviewLaptopName, Model model){
         Review retrievedReview = reviewStorage.findReviewByLaptopName(reviewLaptopName);
-        model.addAttribute("review-page", retrievedReview);
+        model.addAttribute("review", retrievedReview);
         return "review-pageView";
     }
 
