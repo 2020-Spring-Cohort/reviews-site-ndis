@@ -20,7 +20,7 @@ public class MapCategoriesStorageTest {
         MapCategoriesStorage underTest = new MapCategoriesStorage();
         underTest.store(testCategory);
         underTest.store(testCategory2);
-        Categories retrieveCategories = underTest.findCategoryByBrand("");
+        Categories retrieveCategories = underTest.findCategoryByBrand("Test");
         assertThat(retrieveCategories).isEqualTo(testCategory);
     }
 }
