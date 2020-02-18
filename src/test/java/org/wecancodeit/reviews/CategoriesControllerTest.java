@@ -45,6 +45,11 @@ public class CategoriesControllerTest {
         Categories testCategory = new Categories("Brands","asdjfb");
         when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
 
+
+
+
+
+
         underTest.displaySingleCategory("MSI", mockModel);
 
         verify(mockStorage).findCategoryByBrand("MSI");

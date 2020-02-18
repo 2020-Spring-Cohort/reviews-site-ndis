@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Categories </title>
@@ -29,30 +29,34 @@
 
 
 <div class="mainComputers">
-    <h2 th:text="${Categories.brand}" class="selectedBrand">Brand</h2>
-    <h2 th:text="${Categories.name}" class="selectedBrand">Name</h2>
+    <h2 th:text="${laptops.brand}" class="selectedBrand">Brand</h2>
+    <h2 th:text="${laptops.name}" class="selectedBrand">Name</h2>
+    <h2 th:text="${laptops.model}" class="selectedBrand">Model</h2>
     <img src="" alt="hp" width="100px" height="auto">
 
 </div>
 
-<div class="mainComputers">
-    <h2 th:text="${Categories.brand}" class="selectedBrand">Brand</h2>
-    <h2 th:text="${Categories.name}" class="selectedBrand">Name</h2>
-    <img src="" alt="hp" width="100px" height="auto">
+<!--<div class="mainComputers">-->
+<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
+<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
+<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
+<!--    <img src="" alt="hp" width="100px" height="auto">-->
 
-</div>
+<!--</div>-->
 
-<div class="mainComputers">
-    <h2 th:text="${Categories.brand}" class="selectedBrand">Brand</h2>
-    <h2 th:text="${Categories.name}" class="selectedBrand">Name</h2>
-    <img src="" alt="hp" width="100px" height="auto">
+<!--<div class="mainComputers">-->
+<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
+<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
+<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
+<!--    <img src="" alt="hp" width="100px" height="auto">-->
 
-</div>
+<!--</div>-->
 
-<div class="mainComputers">
-    <h2 th:text="${Categories.brand}" class="selectedBrand">Brand</h2>
-    <h2 th:text="${Categories.name}" class="selectedBrand">Name</h2>
-    <img src="" alt="hp" width="100px" height="auto">
+<!--<div class="mainComputers">-->
+<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
+<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
+<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
+<!--<img src="" alt="hp" width="100px" height="auto">-->
 
 </div>
 </body>
@@ -60,28 +64,3 @@
 
 
 </html>
-
-<!--<div class="mainBody">-->
-
-<!--    <div class="mainComputers">-->
-<!--        HP Laptop-->
-
-<!--        <img src="./Images/HPlaptop.jpg" alt="hp" width="100px" height="auto">-->
-<!--    </div>-->
-
-<!--    <div class="mainComputers">-->
-<!--        AlienWare Laptops-->
-<!--        <img src="./Images/Alien.jpg" alt="Alien Laptop "width="100px" height="auto">-->
-<!--    </div>-->
-
-<!--    <div class="mainComputers">-->
-<!--        Msi Laptops-->
-<!--        <img src="./Images/MSI GF63 Thin 9RCX -615.jpg" alt="MSI" width="100px" height="auto">-->
-<!--    </div>-->
-
-<!--    <div class="mainComputers">-->
-<!--        Lenovo Laptops-->
-<!--        <img src="./Images/Lenovo ideadpad S340.jpg" alt="Lenovo"width="100px" height="auto">-->
-<!--    </div>-->
-
-<!--</div>-->

@@ -8,6 +8,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
+import javax.swing.plaf.PanelUI;
+
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -22,6 +24,8 @@ public class WebLayerTest {
     CategoriesStorage mockStorage;
     @MockBean
     ReviewStorage mockStorage2;
+    @MockBean
+    LaptopStorage mockStorage3;
 
     @Test
     public void categoriesShouldBeOkAndReturnTheCategoriesViewCategoriesModelsAttribute() throws Exception{
@@ -42,5 +46,15 @@ public class WebLayerTest {
                 .andExpect(view().name("review-pageView"))
                 .andExpect(model().attributeExists("review"));
     }
+    @Test
+    public void laptopShouldBeOkReturnAllAttributes() throws Exception{
+        mockMvc.perform(get("/laptops"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("Laptops"))
+                .andExpect(model().attributeExists("laptops"));
+
+    }
+
 
 }
