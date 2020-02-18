@@ -8,7 +8,6 @@ public class Laptop {
     private String model;
 
     public String getBrand() {
-
         return brand;
     }
 
