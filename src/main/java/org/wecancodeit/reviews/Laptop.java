@@ -1,11 +1,34 @@
 package org.wecancodeit.reviews;
 
+import javax.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+
 public class Laptop {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    private Categories categories;
     private String brand;
     private String name;
     private String model;
+
+
+
+    public Laptop(Categories categories, String brand, String name, String model) {
+        this.brand = brand;
+        this.name = name;
+        this.model = model;
+        this.categories = categories;
+    }
+
+
+    public Laptop() {
+    }
 
     public String getBrand() {
         return brand;
@@ -19,11 +42,10 @@ public class Laptop {
         return model;
     }
 
-    public Laptop(String brand, String name, String model) {
-        this.brand = brand;
-        this.name = name;
-        this.model = model;
+    public Categories getCategories() {
+        return categories;
     }
+
 
     @Override
     public boolean equals(Object o) {

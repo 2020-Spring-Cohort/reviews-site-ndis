@@ -34,7 +34,7 @@ public class LaptopControllerTest {
 
     @Test
     public void laptopControllerShouldInstantiate() throws Exception {
-        Laptop testLaptop = new Laptop("MSI", "ABS", "AB123");
+        Laptop testLaptop = new Laptop(categories, "MSI","name","model");
         List<Laptop> laptopCollection = Collections.singletonList(testLaptop);
         when(mockStorage.findAllLaptops()).thenReturn(laptopCollection);
         mockMvc.perform(get("/laptops"))
@@ -48,12 +48,13 @@ public class LaptopControllerTest {
 
     @Test
     public void laptopShouldReturnOneReview() {
-        Laptop testLaptop = new Laptop("MSI", "ABS", "AB123");
+        Laptop testLaptop = new Laptop();
         when(mockStorage.findLaptopByName("ABS")).thenReturn(testLaptop);
         underTest.displaySingleReview("ABS", mockModel);
         verify(mockStorage).findLaptopByName("ABS");
-        verify(mockModel).addAttribute("laptop",testLaptop);
+        verify(mockModel).addAttribute("laptop", testLaptop);
     }
+
     @Test
     public void shouldReturnSingleReview() {
         String viewName = underTest.displaySingleReview("testReviewLaptopName", mockModel);
