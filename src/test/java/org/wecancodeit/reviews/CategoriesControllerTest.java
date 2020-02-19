@@ -44,14 +44,7 @@ public class CategoriesControllerTest {
     public void shouldReturnViewWithOneCategory(){
         Categories testCategory = new Categories("Brands","asdjfb");
         when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
-
-
-
-
-
-
         underTest.displaySingleCategory("MSI", mockModel);
-
         verify(mockStorage).findCategoryByBrand("MSI");
         verify(mockModel).addAttribute("category",testCategory);
     }

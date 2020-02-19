@@ -30,7 +30,6 @@ public class LaptopControllerTest {
         mockStorage = mock(LaptopStorage.class);
         underTest = new LaptopController(mockStorage);
         mockMvc = MockMvcBuilders.standaloneSetup(underTest).build();
-
     }
 
     @Test
@@ -43,12 +42,11 @@ public class LaptopControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("Laptops"))
                 .andExpect(model().attributeExists("laptops"))
-                .andExpect(model().attribute("laptops", laptopCollection));
+                .andExpect(model().attribute("laptop", laptopCollection));
     }
 
 
     @Test
-
     public void laptopShouldReturnOneReview() {
         Laptop testLaptop = new Laptop("MSI", "ABS", "AB123");
         when(mockStorage.findLaptopByName("ABS")).thenReturn(testLaptop);

@@ -17,15 +17,14 @@ public class LaptopController {
 
         @RequestMapping("/laptops")
                 public String displayLaptops( Model model) {
-
             model.addAttribute("laptops", laptopStorage.findAllLaptops());
             return "Laptops";
         }
 
-            @RequestMapping ("/laptops/{laptopsName}")
-            public String displaySingleReview(@PathVariable String laptopsName, Model model){
-            Laptop retrievedLaptop = laptopStorage.findLaptopByName(laptopsName);
-            model.addAttribute("laptops",retrievedLaptop);
+            @RequestMapping ("/laptops/{laptopName}")
+            public String displaySingleReview(@PathVariable String laptopName, Model model){
+            Laptop retrievedLaptop = laptopStorage.findLaptopByName(laptopName);
+            model.addAttribute("laptop",retrievedLaptop);
             return "review-pageView";
         }
 

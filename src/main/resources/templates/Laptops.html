@@ -18,23 +18,24 @@
     </div>
 
     <div class="hashtags-button">
-       <a href="Hashtags.html">#Hashtags</a>
+        <a href="Hashtags.html">#Hashtags</a>
 
     </div>
-
-
 </div>
 
 <body class="mainBody">
 
 
 <div class="mainComputers">
+
+    <h2 th:each="laptops: ${laptops}"><a th:text="${laptops.brand}" th:href="@{'/laptops/' + ${laptops.brand}}">Laptops</a></h2>
+
+
     <h2 th:text="${laptops.brand}" class="selectedBrand">Brand</h2>
     <h2 th:text="${laptops.name}" class="selectedBrand">Name</h2>
     <h2 th:text="${laptops.model}" class="selectedBrand">Model</h2>
     <img src="" alt="hp" width="100px" height="auto">
 
-</div>
 
 <!--<div class="mainComputers">-->
 <!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
@@ -44,19 +45,6 @@
 
 <!--</div>-->
 
-<!--<div class="mainComputers">-->
-<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
-<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
-<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
-<!--    <img src="" alt="hp" width="100px" height="auto">-->
-
-<!--</div>-->
-
-<!--<div class="mainComputers">-->
-<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
-<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
-<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
-<!--<img src="" alt="hp" width="100px" height="auto">-->
 
 </div>
 </body>
