@@ -21,10 +21,10 @@ public class LaptopController {
             return "Laptops";
         }
 
-            @RequestMapping ("/laptops/{laptopName}")
-            public String displaySingleReview(@PathVariable String laptopName, Model model){
-            Laptop retrievedLaptop = laptopStorage.findLaptopByName(laptopName);
-            model.addAttribute("laptop",retrievedLaptop);
+            @RequestMapping ("/laptops/{laptopsName}")
+            public String displaySingleReview(@PathVariable String laptopsName, Model model){
+            Laptop retrievedReview = laptopStorage.findLaptopByName(laptopsName);
+            model.addAttribute("laptop",retrievedReview);
             return "review-pageView";
         }
 

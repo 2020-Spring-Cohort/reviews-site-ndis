@@ -50,6 +50,14 @@ public class LaptopControllerTest {
     public void laptopShouldReturnOneReview() {
         Laptop testLaptop = new Laptop("MSI", "ABS", "AB123");
         when(mockStorage.findLaptopByName("ABS")).thenReturn(testLaptop);
+        underTest.displaySingleReview("ABS", mockModel);
+        verify(mockStorage).findLaptopByName("ABS");
+        verify(mockModel).addAttribute("laptop",testLaptop);
+    }
+    @Test
+    public void shouldReturnSingleReview() {
+        String viewName = underTest.displaySingleReview("testReviewLaptopName", mockModel);
+        assertThat(viewName).isEqualTo("review-pageView");
     }
 
 }
