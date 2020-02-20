@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 
 
 <head>
@@ -18,7 +20,7 @@
 
     <div class="categories-button">
         
-        <a href="categoriesView.html">Categories</a>
+        <a href = "categoriesView.html" th:href="@{'/Laptops/'+ ${review.brand.laptop}}">Categories</a>
 
     </div>
 
