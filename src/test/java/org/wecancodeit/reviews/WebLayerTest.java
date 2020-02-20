@@ -1,5 +1,7 @@
 package org.wecancodeit.reviews;
 
+import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Review;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +9,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-
-import javax.swing.plaf.PanelUI;
+import org.wecancodeit.reviews.storage.CategoriesStorage;
+import org.wecancodeit.reviews.storage.LaptopStorage;
+import org.wecancodeit.reviews.storage.ReviewStorage;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -38,7 +41,8 @@ public class WebLayerTest {
 
     @Test
     public void reviewShouldBeOkAndReturnTheReviewPageViewReviewModelsAttribute() throws Exception {
-        Review dell = new Review("", "Dell", "", "", "");
+        Categories testCategory = new Categories("MSI");
+        Review dell = new Review("", testCategory, "", "", "");
        when(mockStorage2.findReviewByLaptopName("dell")).thenReturn(dell);
         mockMvc.perform(get("/review-page/dell"))
                 .andDo(print())

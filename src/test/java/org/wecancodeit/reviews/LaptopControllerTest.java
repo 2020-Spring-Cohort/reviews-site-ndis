@@ -1,10 +1,14 @@
 package org.wecancodeit.reviews;
 
+import org.wecancodeit.reviews.contorller.LaptopController;
+import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Laptop;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
+import org.wecancodeit.reviews.storage.LaptopStorage;
 
 
 import java.util.Collections;
@@ -34,6 +38,7 @@ public class LaptopControllerTest {
 
     @Test
     public void laptopControllerShouldInstantiate() throws Exception {
+        Categories categories = new Categories();
         Laptop testLaptop = new Laptop(categories, "MSI","name","model");
         List<Laptop> laptopCollection = Collections.singletonList(testLaptop);
         when(mockStorage.findAllLaptops()).thenReturn(laptopCollection);
@@ -42,7 +47,7 @@ public class LaptopControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("Laptops"))
                 .andExpect(model().attributeExists("laptops"))
-                .andExpect(model().attribute("laptop", laptopCollection));
+                .andExpect(model().attribute("laptops", laptopCollection));
     }
 
 

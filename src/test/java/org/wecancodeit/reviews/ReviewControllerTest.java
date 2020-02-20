@@ -1,10 +1,14 @@
 package org.wecancodeit.reviews;
 
+import org.wecancodeit.reviews.contorller.ReviewController;
+import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Review;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
+import org.wecancodeit.reviews.storage.ReviewStorage;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -28,7 +32,8 @@ public class ReviewControllerTest {
 
     @Test
     public void shouldReturnViewWithOneReview(){
-        Review testReview = new Review("testName", "testBrand", "testHashtag", "testReviewText", "testLaptopModel");
+        Categories testCategory = new Categories("MSI");
+        Review testReview = new Review("testName", testCategory, "testHashtag", "testReviewText", "testLaptopModel");
         when(mockStorage.findReviewByLaptopName("testReviewLaptopName")).thenReturn(testReview);
         underTest.displaySingleReview("testReviewLaptopName", mockModel);
         verify(mockStorage).findReviewByLaptopName("testReviewLaptopName");
