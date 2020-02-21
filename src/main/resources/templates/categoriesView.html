@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 
 
@@ -10,22 +10,22 @@
     <title>Categories </title>
 
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href = "./CSS/style.css">
+    <link rel="stylesheet" href = "./CSS/layout.css">
+
 </head>
 
 
 <div class="indexHash">
 
 
-    <div class="categories-button">
-        
-        <a href = "categoriesView.html" th:href="@{'/Laptops/'+ ${review.brand.laptop}}">Categories</a>
+    <div class="category-button">
+        <a href="categoriesView.html" th:href="@{/category}">Categories</a>
 
     </div>
 
     <div class="hashtags-button">
-       <a href="Hashtags.html">#Hashtags</a>
+        <a href="Hashtags.html" th:href="@{/Hashtags}">#Hashtags</a>
 
     </div>
 

@@ -1,31 +1,30 @@
 package org.wecancodeit.reviews.storage;
 
-import org.springframework.stereotype.Service;
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
 
 import java.util.Collection;
 import java.util.HashMap;
 
 
 public class MapCategoriesStorage implements CategoriesStorage {
-    private HashMap<String, Categories> categoryList;
+    private HashMap<String, Category> categoryList;
 
     public MapCategoriesStorage() {
         categoryList = new HashMap<>();
     }
 
     @Override
-    public Collection<Categories> findAllCategories() {
+    public Collection<Category> findAllCategories() {
         return categoryList.values();
     }
 
     @Override
-    public void store(Categories categories) {
-        categoryList.put(categories.getBrand(), categories);
+    public void store(Category category) {
+        categoryList.put(category.getBrand(), category);
     }
 
     @Override
-    public Categories findCategoryByBrand(String categoryBrand) {
+    public Category findCategoryByBrand(String categoryBrand) {
         return categoryList.get(categoryBrand);
     }
 }

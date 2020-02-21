@@ -17,23 +17,29 @@ public class Review {
     private String hashTag;
     private String laptopModel;
     @ManyToOne
-    private Categories categories;
+    private Laptop laptop;
 
     public Review(){}
 
-    public Review(String laptopName, Categories categories, String hashTag, String reviewText, String laptopModel) {
+    public Review(String laptopName, String hashTag, String reviewText, String laptopModel, Laptop laptop) {
         this.laptopName = laptopName;
         this.hashTag = hashTag;
         this.reviewText = reviewText;
         this.laptopModel = laptopModel;
-        this.categories = categories;
+        this.laptop = laptop;
     }
 
     public String getLaptopName() {
         return laptopName;
     }
 
+    public Laptop getLaptop() {
+        return laptop;
+    }
 
+    public Long getId() {
+        return id;
+    }
 
     public String getLaptopModel() {
         return laptopModel;
@@ -47,10 +53,6 @@ public class Review {
         return hashTag;
     }
 
-    public Categories getCategories(){
-        return categories;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -60,12 +62,11 @@ public class Review {
                 Objects.equals(laptopName, review.laptopName) &&
                 Objects.equals(reviewText, review.reviewText) &&
                 Objects.equals(hashTag, review.hashTag) &&
-                Objects.equals(laptopModel, review.laptopModel) &&
-                Objects.equals(categories, review.categories);
+                Objects.equals(laptopModel, review.laptopModel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, laptopName, reviewText, hashTag, laptopModel, categories);
+        return Objects.hash(id, laptopName, reviewText, hashTag, laptopModel);
     }
 }

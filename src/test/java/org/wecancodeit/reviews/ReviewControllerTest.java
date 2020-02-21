@@ -1,7 +1,8 @@
 package org.wecancodeit.reviews;
 
 import org.wecancodeit.reviews.contorller.ReviewController;
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,8 +33,9 @@ public class ReviewControllerTest {
 
     @Test
     public void shouldReturnViewWithOneReview(){
-        Categories testCategory = new Categories("MSI");
-        Review testReview = new Review("testName", testCategory, "testHashtag", "testReviewText", "testLaptopModel");
+        Category testCategory = new Category("MSI");
+        Laptop laptop = new Laptop();
+        Review testReview = new Review("testName", "testHashtag", "testReviewText", "testLaptopModel", laptop);
         when(mockStorage.findReviewByLaptopName("testReviewLaptopName")).thenReturn(testReview);
         underTest.displaySingleReview("testReviewLaptopName", mockModel);
         verify(mockStorage).findReviewByLaptopName("testReviewLaptopName");

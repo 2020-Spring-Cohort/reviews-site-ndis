@@ -4,21 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Categories </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href = "./CSS/style.css">
+    <link rel="stylesheet" href = "./CSS/layout.css">
+
 </head>
 
 
 <div class="indexHash">
 
 
-    <div class="categories-button">
-        <a href="categoriesView.html">Categories</a>
+    <div class="category-button">
+        <a href="categoriesView.html" th:href="@{/categoriesView}">Categories</a>
 
     </div>
 
-    <div class="hashtags-button">
-        <a href="Hashtags.html">#Hashtags</a>
+        <div class="hashtags-button">
+            <a href="Hashtags.html" th:href="@{/Hashtags}">#Hashtags</a>
 
     </div>
 </div>

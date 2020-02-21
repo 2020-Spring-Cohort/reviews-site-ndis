@@ -1,30 +1,31 @@
 package org.wecancodeit.reviews.storage;
 
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
 import org.springframework.stereotype.Service;
-import org.wecancodeit.reviews.storage.repos.CategorieRepository;
+import org.wecancodeit.reviews.storage.repos.CategoryRepository;
 
 import java.util.Collection;
 
 @Service
 public class CategoryStorageJpaImpl implements CategoriesStorage{
 
-    private CategorieRepository categorieRepository;
+    private CategoryRepository categoryRepository;
 
-    public CategoryStorageJpaImpl(CategorieRepository categorieRepository){
-        this.categorieRepository = categorieRepository;
+    public CategoryStorageJpaImpl(CategoryRepository categoryRepository){
+        this.categoryRepository = categoryRepository;
     }
     @Override
-    public Collection<Categories> findAllCategories(){
-        return (Collection<Categories>) categorieRepository.findAll();
+    public Collection<Category> findAllCategories(){
+        return (Collection<Category>) categoryRepository.findAll();
     }
 
     @Override
-    public void store(Categories categories){categorieRepository.save(categories);}
+    public void store(Category category){
+        categoryRepository.save(category);}
 
     @Override
-    public Categories findCategoryByBrand(String categoriesBrand){
-        return categorieRepository.findByBrand(categoriesBrand).get();
+    public Category findCategoryByBrand(String categoriesBrand){
+        return categoryRepository.findByBrand(categoriesBrand).get();
     }
 
 }

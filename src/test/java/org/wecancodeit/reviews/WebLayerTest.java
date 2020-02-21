@@ -1,6 +1,7 @@
 package org.wecancodeit.reviews;
 
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
+import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,7 +32,7 @@ public class WebLayerTest {
     LaptopStorage mockStorage3;
 
     @Test
-    public void categoriesShouldBeOkAndReturnTheCategoriesViewCategoriesModelsAttribute() throws Exception{
+    public void categoriesShouldBeOkAndReturnTheCategoriesViewAndModelsAttribute() throws Exception{
         mockMvc.perform(get("/categories"))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -40,9 +41,10 @@ public class WebLayerTest {
     }
 
     @Test
-    public void reviewShouldBeOkAndReturnTheReviewPageViewReviewModelsAttribute() throws Exception {
-        Categories testCategory = new Categories("MSI");
-        Review dell = new Review("", testCategory, "", "", "");
+    public void reviewShouldBeOkAndReturnTheReviewPageAndModelsAttribute() throws Exception {
+        Category testCategory = new Category("MSI");
+        Laptop laptop = new Laptop();
+        Review dell = new Review("",  "", "", "", laptop);
        when(mockStorage2.findReviewByLaptopName("dell")).thenReturn(dell);
         mockMvc.perform(get("/review-page/dell"))
                 .andDo(print())

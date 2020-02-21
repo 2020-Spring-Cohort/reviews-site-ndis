@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Categories {
+public class Category {
 
 
     @Id
@@ -13,15 +13,15 @@ public class Categories {
     private Long id;
     private String brand;
     private String name;
-    @OneToMany(mappedBy = "categories")
-    private Collection<Review> reviews;
+    @OneToMany(mappedBy = "category")
+    private Collection<Laptop> laptops;
 
 
-    public Categories(String brand) {
+    public Category(String brand) {
         this.brand = brand;
     }
 
-    public Categories() {
+    public Category() {
     }
 
     public Long getId() {
@@ -37,7 +37,7 @@ public class Categories {
     }
 
 
-    public Categories(String brand, String name) {
+    public Category(String brand, String name) {
 
         this.brand = brand;
         this.name = name;
@@ -48,17 +48,17 @@ public class Categories {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Categories categories = (Categories) o;
-        return Objects.equals(brand, categories.brand);
+        Category category = (Category) o;
+        return Objects.equals(brand, category.brand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(brand);
     }
 
 
-    public Collection<Review> getReviews(){
-        return reviews;
+    public Collection<Laptop> getLaptops(){
+        return laptops;
     }
 }

@@ -1,6 +1,6 @@
 package org.wecancodeit.reviews.storage;
 
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
 import org.springframework.boot.CommandLineRunner;
@@ -21,52 +21,37 @@ public class Populator implements CommandLineRunner {
         this.reviewStorage = reviewStorage;
     }
         @Override
-    public void run (String... args) throws Exception {
+    public void run (String... args){
 
 
-            categoryStorageJpaImpl.store(new Categories("HP","akdjsfnka"));
-            categoryStorageJpaImpl.store(new Categories("AlienWare","fnasjdnfasn"));
-            categoryStorageJpaImpl.store(new Categories("Dell","fdgdg"));
-            categoryStorageJpaImpl.store(new Categories("MSI","asdfaf"));
+//            categoryStorageJpaImpl.store(new Category("HP","akdjsfnka"));
+//            categoryStorageJpaImpl.store(new Category("AlienWare","fnasjdnfasn"));
+//            categoryStorageJpaImpl.store(new Category("Dell","fdgdg"));
+//            categoryStorageJpaImpl.store(new Category("MSI","asdfaf"));
 
-            Laptop msi1 = new Laptop();
-            laptopStorage.store(msi1);
-            Laptop msi2 = new Laptop();
-            laptopStorage.store(msi2);
-            Laptop msi3 = new Laptop();
-            laptopStorage.store(msi3);
-            Laptop msi4 = new Laptop();
-            laptopStorage.store(msi4);
 
-            Laptop alien1 = new Laptop();
-            laptopStorage.store(alien1);
-            Laptop alien2 = new Laptop();
-            laptopStorage.store(alien2);
-            Laptop alien3 = new Laptop();
-            laptopStorage.store(alien3);
-            Laptop alien4 = new Laptop();
-            laptopStorage.store(alien4);
 
-            Laptop hp1 = new Laptop();
-            laptopStorage.store(hp1);
-            Laptop hp2 = new Laptop();
-            laptopStorage.store(hp2);
-            Laptop hp3 = new Laptop();
-            laptopStorage.store(hp3);
-            Laptop hp4 = new Laptop();
-            laptopStorage.store(hp4);
+            Category msi = new Category("MSI","Predator");
+            Laptop predator = new Laptop(msi, "9560NGW");
+            laptopStorage.store(predator);
 
-            Laptop lenovo1 = new Laptop();
-            laptopStorage.store(lenovo1);
-            Laptop lenovo2 = new Laptop();
-            laptopStorage.store(lenovo2);
-            Laptop lenovo3 = new Laptop();
-            laptopStorage.store(lenovo3);
-            Laptop lenovo4 = new Laptop();
-            laptopStorage.store(lenovo4);
+            Category hp = new Category("HP","hpJunk");
+            Laptop hpJunk = new Laptop(hp, "sdfgh654");
+            laptopStorage.store(hpJunk);
 
-            Review review1 = new Review();
-            reviewStorage.store(review1);
+            Category alien = new Category("AlienWare", "Aurora");
+            Laptop aurora = new Laptop(alien, "1234");
+            laptopStorage.store(aurora);
+
+            Category lenovo = new Category("Lenovo", "ThinkPad");
+            Laptop thinkPad = new Laptop(lenovo, "4321");
+            laptopStorage.store(thinkPad);
+
+
+
+//
+//            Review review1 = new Review();
+//            reviewStorage.store(review1);
 
         }
     }

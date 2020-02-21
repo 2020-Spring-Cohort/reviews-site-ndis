@@ -1,6 +1,6 @@
 package org.wecancodeit.reviews;
 import org.wecancodeit.reviews.contorller.CategoriesController;
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
@@ -18,7 +18,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-public class CategoriesControllerTest {
+public class CategoryControllerTest {
     private MockMvc mockMvc;
     private CategoriesController underTest;
     private CategoriesStorage mockStorage;
@@ -35,19 +35,19 @@ public class CategoriesControllerTest {
 
     @Test
     public void categoryControllerShouldInstantiate() throws Exception {
-        Categories testCategories = new Categories("MSI", "asjhdbf");
-        List<Categories> categoriesCollection = Collections.singletonList(testCategories);
-        when(mockStorage.findAllCategories()).thenReturn(categoriesCollection);
+        Category testCategory = new Category("MSI", "asjhdbf");
+        List<Category> categoryCollection = Collections.singletonList(testCategory);
+        when(mockStorage.findAllCategories()).thenReturn(categoryCollection);
         mockMvc.perform(get("/categories"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("categoriesView"))
                 .andExpect(model().attributeExists("categories"))
-                .andExpect(model().attribute("categories", categoriesCollection));
+                .andExpect(model().attribute("categories", categoryCollection));
     }
     @Test
     public void shouldReturnViewWithOneCategory(){
-        Categories testCategory = new Categories("Brands","asdjfb");
+        Category testCategory = new Category("Brands","asdjfb");
         when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
         underTest.displaySingleCategory("MSI", mockModel);
         verify(mockStorage).findCategoryByBrand("MSI");

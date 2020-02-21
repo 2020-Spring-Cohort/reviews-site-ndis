@@ -23,7 +23,7 @@ public class MapLaptopStorage implements LaptopStorage{
 
     @Override
             public void store(Laptop laptop){
-            laptopList.put(laptop.getName(), laptop);
+            laptopList.put(laptop.getModel(), laptop);
         }
 
     @Override

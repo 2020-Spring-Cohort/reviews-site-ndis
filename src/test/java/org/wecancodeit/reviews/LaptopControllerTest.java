@@ -1,7 +1,7 @@
 package org.wecancodeit.reviews;
 
 import org.wecancodeit.reviews.contorller.LaptopController;
-import org.wecancodeit.reviews.models.Categories;
+import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Laptop;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,8 +38,8 @@ public class LaptopControllerTest {
 
     @Test
     public void laptopControllerShouldInstantiate() throws Exception {
-        Categories categories = new Categories();
-        Laptop testLaptop = new Laptop(categories, "MSI","name","model");
+        Category category = new Category();
+        Laptop testLaptop = new Laptop(category, "model");
         List<Laptop> laptopCollection = Collections.singletonList(testLaptop);
         when(mockStorage.findAllLaptops()).thenReturn(laptopCollection);
         mockMvc.perform(get("/laptops"))
