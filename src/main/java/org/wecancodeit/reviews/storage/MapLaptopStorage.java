@@ -7,7 +7,7 @@ import org.wecancodeit.reviews.models.Laptop;
 import java.util.Collection;
 import java.util.HashMap;
 
-@Service
+
 public class MapLaptopStorage implements LaptopStorage{
 
     private HashMap<String, Laptop> laptopList;
