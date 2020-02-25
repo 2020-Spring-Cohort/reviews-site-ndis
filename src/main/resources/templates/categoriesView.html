@@ -34,30 +34,30 @@
 <body>
     <div class="mainBody">
 
-        <div class="mainComputers">
+        <div class="mainComputers" th:each="laptop:${category.laptops}">
             Hp Laptops
 
             <img src="./Images/HPlaptop.jpg" alt="hp" width="100px" height="auto">
-            <a href="Laptops.html">HP</a>
+            <a href="Laptops.html" th:href="@{'/laptops/' + ${laptops.id}">HP</a>
 
         </div>
 
         <div class="mainComputers">
             AlienWare Laptops
             <img src="./Images/Alien.jpg" alt="Alien Laptop "width="100px" height="auto">
-            <a href="Laptops.html">AlienWare</a>
+            <a href="Laptops.html" th:href="@{'/laptops/'}">AlienWare</a>
         </div>
 
         <div class="mainComputers">
             Msi Laptops
             <img src="./Images/MSI GF63 Thin 9RCX -615.jpg" alt="MSI" width="100px" height="auto">
-            <a href="Laptops.html">MSI</a>
+            <a href="Laptops.html" th:href="@{'/laptops/'}">MSI</a>
         </div>
 
         <div class="mainComputers">
             Lenovo Laptops
             <img src="./Images/Lenovo ideadpad S340.jpg" alt="Lenovo"width="100px" height="auto">
-            <a href="Laptops.html">Lenovo</a>
+            <a href="Laptops.html" th:href="@{'/laptops/'}">Lenovo</a>
         </div>
 
     </div>
