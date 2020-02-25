@@ -22,7 +22,7 @@ public class HttpRequestTest {
     @Test
     public void categoriesEndPointReturnsOk(){
         ResponseEntity<String> response = testRestTemplate.getForEntity(
-                "http://localhost:" + port + "/categories", String.class);
+                "http://localhost:" + port + "/category", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 }

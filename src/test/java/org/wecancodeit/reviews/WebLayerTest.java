@@ -33,11 +33,11 @@ public class WebLayerTest {
 
     @Test
     public void categoriesShouldBeOkAndReturnTheCategoriesViewAndModelsAttribute() throws Exception{
-        mockMvc.perform(get("/categories"))
+        mockMvc.perform(get("/category"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("categoriesView"))
-                .andExpect(model().attributeExists("categories"));
+                .andExpect(model().attributeExists("category"));
     }
 
     @Test

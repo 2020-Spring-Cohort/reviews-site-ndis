@@ -21,7 +21,7 @@ public class ReviewsApplicationTests {
 
     @Test
     public void shouldReceiveOkFromCategoryEndPoint() throws Exception {
-        mockMvc.perform(get("/categories")).andDo(print()).andExpect(status().isOk());
+        mockMvc.perform(get("/category")).andDo(print()).andExpect(status().isOk());
     }
 
 }

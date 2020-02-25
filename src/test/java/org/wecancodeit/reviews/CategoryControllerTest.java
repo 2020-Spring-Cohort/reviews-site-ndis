@@ -38,12 +38,12 @@ public class CategoryControllerTest {
         Category testCategory = new Category("MSI", "asjhdbf");
         List<Category> categoryCollection = Collections.singletonList(testCategory);
         when(mockStorage.findAllCategories()).thenReturn(categoryCollection);
-        mockMvc.perform(get("/categories"))
+        mockMvc.perform(get("/category"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("categoriesView"))
-                .andExpect(model().attributeExists("categories"))
-                .andExpect(model().attribute("categories", categoryCollection));
+                .andExpect(model().attributeExists("category"))
+                .andExpect(model().attribute("category", categoryCollection));
     }
     @Test
     public void shouldReturnViewWithOneCategory(){
