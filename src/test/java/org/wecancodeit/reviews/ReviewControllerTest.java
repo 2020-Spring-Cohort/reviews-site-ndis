@@ -35,7 +35,7 @@ public class ReviewControllerTest {
     public void shouldReturnViewWithOneReview(){
         Category testCategory = new Category("MSI");
         Laptop laptop = new Laptop();
-        Review testReview = new Review("testName", "testHashtag", "testReviewText", "testLaptopModel", laptop);
+        Review testReview = new Review("testLaptopName", "testHashtag", "testReviewText", "testLaptopModel", laptop);
         when(mockStorage.findReviewByLaptopName("testReviewLaptopName")).thenReturn(testReview);
         underTest.displaySingleReview("testReviewLaptopName", mockModel);
         verify(mockStorage).findReviewByLaptopName("testReviewLaptopName");

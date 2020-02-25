@@ -34,12 +34,12 @@
 <body>
     <div class="mainBody">
 
-        <div class="mainComputers" th:each="laptop:${category.laptops}">
+        <div class="mainComputers" th:each="laptop:${category}">
             Hp Laptops
 
             <img src="./Images/HPlaptop.jpg" alt="hp" width="100px" height="auto">
-            <a href="Laptops.html" th:href="@{'/laptops/' + ${laptops.id}">HP</a>
-
+            <a href="Laptops.html" th:href="@{'/laptops/' + ${laptop.id}}">HP</a>
+}
         </div>
 
         <div class="mainComputers">

@@ -42,7 +42,7 @@ public class WebLayerTest {
 
     @Test
     public void reviewShouldBeOkAndReturnTheReviewPageAndModelsAttribute() throws Exception {
-        Category testCategory = new Category("MSI");
+        Category testCategory = new Category("MSI","testName");
         Laptop laptop = new Laptop();
         Review dell = new Review("",  "", "", "", laptop);
        when(mockStorage2.findReviewByLaptopName("dell")).thenReturn(dell);

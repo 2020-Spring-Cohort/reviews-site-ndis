@@ -19,7 +19,7 @@ public class LaptopStorageJpaImplTest {
     public void shouldFindAllLaptops(){
         LaptopRepository mockLaptopRepository = mock(LaptopRepository.class);
         Category category = new Category();
-        Laptop testLaptop = new Laptop(category,"asdfa");
+        Laptop testLaptop = new Laptop(category,"testName", "testModel");
         LaptopStorage underTest = new LaptopStorageJpaImpl(mockLaptopRepository);
         when(mockLaptopRepository.findAll()).thenReturn(Collections.singletonList(testLaptop));
         underTest.store(testLaptop);
@@ -31,19 +31,19 @@ public class LaptopStorageJpaImplTest {
     public void shouldRetrieveSingleReviewByLaptop(){
         LaptopRepository mockLaptopRepository = mock(LaptopRepository.class);
        Category category = new Category();
-        Laptop testLaptop1 = new Laptop(category,"asdfa");
-       Laptop testLaptop2 = new Laptop(category,"fghd");
+        Laptop testLaptop1 = new Laptop(category,"testLaptopName1", "testModel");
+       Laptop testLaptop2 = new Laptop(category,"testLaptopName2", "testModel");
        LaptopStorage underTest = new LaptopStorageJpaImpl(mockLaptopRepository);
        underTest.store(testLaptop1);
        underTest.store(testLaptop2);
        Optional<Laptop> testLaptop1Optional = Optional.of(testLaptop1);
-       when(mockLaptopRepository.findByName("Totally Awesome Laptop")).thenReturn(testLaptop1Optional);
+       when(mockLaptopRepository.findByName("testLaptopName1")).thenReturn(testLaptop1Optional);
 
        Optional<Laptop> testLaptop2Optional = Optional.of(testLaptop2);
-       when(mockLaptopRepository.findByName("Totally Terrible Laptop")).thenReturn(testLaptop2Optional);
+       when(mockLaptopRepository.findByName("testLaptopName2")).thenReturn(testLaptop2Optional);
 
-       Laptop retrievedLaptop1 = underTest.findLaptopByName("Totally Awesome Laptop");
-       Laptop retrievedLaptop2 = underTest.findLaptopByName("Totally Terrible Laptop");
+       Laptop retrievedLaptop1 = underTest.findLaptopByName("testLaptopName1");
+       Laptop retrievedLaptop2 = underTest.findLaptopByName("testLaptopName2");
        assertThat(retrievedLaptop1).isEqualTo(testLaptop1);
        assertThat(retrievedLaptop2).isEqualTo(testLaptop2);
    }

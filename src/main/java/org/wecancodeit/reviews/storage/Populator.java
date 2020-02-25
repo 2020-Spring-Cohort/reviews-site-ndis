@@ -24,34 +24,34 @@ public class Populator implements CommandLineRunner {
     public void run (String... args){
 
 
-//            categoryStorageJpaImpl.store(new Category("HP","akdjsfnka"));
-//            categoryStorageJpaImpl.store(new Category("AlienWare","fnasjdnfasn"));
-//            categoryStorageJpaImpl.store(new Category("Dell","fdgdg"));
-//            categoryStorageJpaImpl.store(new Category("MSI","asdfaf"));
+            categoryStorageJpaImpl.store(new Category("HP","testName"));
+            categoryStorageJpaImpl.store(new Category("AlienWare","testName"));
+            categoryStorageJpaImpl.store(new Category("Dell","testName"));
+            categoryStorageJpaImpl.store(new Category("MSI","testName"));
 
 
 
             Category msi = new Category("MSI","Predator");
-            Laptop predator = new Laptop(msi, "9560NGW");
+            Laptop predator = new Laptop(msi, "testLaptopName", "testModel");
             laptopStorage.store(predator);
 
             Category hp = new Category("HP","hpJunk");
-            Laptop hpJunk = new Laptop(hp, "sdfgh654");
+            Laptop hpJunk = new Laptop(hp, "testLaptopName","testModel");
             laptopStorage.store(hpJunk);
 
             Category alien = new Category("AlienWare", "Aurora");
-            Laptop aurora = new Laptop(alien, "1234");
+            Laptop aurora = new Laptop(alien, "testLaptopName", "testModel");
             laptopStorage.store(aurora);
 
             Category lenovo = new Category("Lenovo", "ThinkPad");
-            Laptop thinkPad = new Laptop(lenovo, "4321");
+            Laptop thinkPad = new Laptop(lenovo, "testLaptopName", "testModel");
             laptopStorage.store(thinkPad);
 
 
 
-//
-//            Review review1 = new Review();
-//            reviewStorage.store(review1);
+
+            Review review1 = new Review();
+            reviewStorage.store(review1);
 
         }
     }

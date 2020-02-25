@@ -39,7 +39,7 @@ public class LaptopControllerTest {
     @Test
     public void laptopControllerShouldInstantiate() throws Exception {
         Category category = new Category();
-        Laptop testLaptop = new Laptop(category, "model");
+        Laptop testLaptop = new Laptop(category, "testLaptopName","testModel");
         List<Laptop> laptopCollection = Collections.singletonList(testLaptop);
         when(mockStorage.findAllLaptops()).thenReturn(laptopCollection);
         mockMvc.perform(get("/laptops"))

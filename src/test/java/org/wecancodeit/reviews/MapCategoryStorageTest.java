@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MapCategoryStorageTest {
     @Test
     public void shouldStoreCategoriesInMap() {
-        Category testCategory = new Category("MSI", "names");
+        Category testCategory = new Category("MSI", "testName");
         CategoriesStorage underTest = new MapCategoriesStorage();
         underTest.store(testCategory);
         assertThat(underTest.findAllCategories().contains(testCategory));
@@ -18,12 +18,12 @@ public class MapCategoryStorageTest {
 
     @Test
     public void shouldRetrieveSingleCategory() {
-        Category testCategory = new Category("Test", "names");
-        Category testCategory2 = new Category("Msi","namesfgh");
+        Category testCategory = new Category("Test", "testName");
+        Category testCategory2 = new Category("Msi","testName");
         MapCategoriesStorage underTest = new MapCategoriesStorage();
         underTest.store(testCategory);
         underTest.store(testCategory2);
-        Category retrieveCategory = underTest.findCategoryByBrand("Test");
+        Category retrieveCategory = underTest.findCategoryByBrand("testBrand");
         assertThat(retrieveCategory).isEqualTo(testCategory);
     }
 }

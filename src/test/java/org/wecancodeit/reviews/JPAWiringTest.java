@@ -32,22 +32,21 @@ private TestEntityManager entityManager;
 
 @Test
 public void categoryShouldHaveListOfLaptops(){
-    Category testCategory = new Category("Tbrand");
+    Category testCategory = new Category("testBrand", "testName");
     Review testReview = new Review();
-   Laptop testLaptop = new Laptop(testCategory, "");
+   Laptop testLaptop = new Laptop(testCategory, "testLaptopName","testModel");
 
 
     categoryRepository.save(testCategory);
     laptopRepository.save(testLaptop);
     reviewRepository.save(testReview);
-
     entityManager.flush();
     entityManager.clear();
 
-    Optional<Category> retreivedCategroeiesOptional = categoryRepository.findById(testCategory.getId());
-    Category retreivedCategory = retreivedCategroeiesOptional.get();
-    Laptop retreivedLaptop = laptopRepository.findById(testLaptop.getId()).get();
+    Optional<Category> retrievedCategoriesOptional = categoryRepository.findById(testCategory.getId());
+    Category retrievedCategory = retrievedCategoriesOptional.get();
+    Laptop retrievedLaptop = laptopRepository.findById(testLaptop.getId()).get();
 
-    assertThat(retreivedCategory.getLaptops()).contains(testLaptop);
+    assertThat(retrievedCategory.getLaptops()).contains(testLaptop);
 }
 }

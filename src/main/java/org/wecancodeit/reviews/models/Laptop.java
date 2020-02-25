@@ -15,20 +15,19 @@ public class Laptop {
 
     @ManyToOne
     private Category category;
-//    private String brand;
-//    private String name;
+private String name;
     private String model;
 
     @OneToMany
     private Collection<Review> reviews;
 
 
-    public Laptop(Category category, String model) {
-//        this.brand = brand;
-//        this.name = name;
+    public Laptop(Category category, String name, String model) {
+
         this.model = model;
         this.category = category;
-//        this.reviews = Arrays.asList(reviews);
+        this.name = name;
+
     }
 
 
@@ -37,13 +36,9 @@ public class Laptop {
 
     public Collection<Review> getReviews() {return reviews;}
 
-//    public String getBrand() {
-//        return brand;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
+    public String getName() {
+        return name;
+    }
 
     public String getModel() {
         return model;
@@ -66,8 +61,7 @@ public class Laptop {
 
         if (id != null ? !id.equals(laptop.id) : laptop.id != null) return false;
         if (category != null ? !category.equals(laptop.category) : laptop.category != null) return false;
-//        if (brand != null ? !brand.equals(laptop.brand) : laptop.brand != null) return false;
-//        if (name != null ? !name.equals(laptop.name) : laptop.name != null) return false;
+        if (name != null ? !name.equals(laptop.name) : laptop.name != null) return false;
         return model != null ? model.equals(laptop.model) : laptop.model == null;
     }
 
@@ -75,8 +69,7 @@ public class Laptop {
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (category != null ? category.hashCode() : 0);
-//        result = 31 * result + (brand != null ? brand.hashCode() : 0);
-//        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (model != null ? model.hashCode() : 0);
         return result;
     }
