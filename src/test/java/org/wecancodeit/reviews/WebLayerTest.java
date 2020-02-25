@@ -1,5 +1,6 @@
 package org.wecancodeit.reviews;
 
+import org.springframework.test.annotation.DirtiesContext;
 import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
@@ -20,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 @ExtendWith(SpringExtension.class)
+@DirtiesContext
 @WebMvcTest
 public class WebLayerTest {
     @Autowired
@@ -46,7 +48,7 @@ public class WebLayerTest {
         Laptop laptop = new Laptop();
         Review dell = new Review("", "", "", "", laptop);
         when(mockStorage2.findReviewById(13)).thenReturn(dell);
-        mockMvc.perform(get("/review-page/dell"))
+        mockMvc.perform(get("/review-page/13"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("review-pageView"))

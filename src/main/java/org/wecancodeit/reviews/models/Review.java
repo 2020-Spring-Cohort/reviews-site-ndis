@@ -58,16 +58,25 @@ public class Review {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         Review review = (Review) o;
-        return Objects.equals(id, review.id) &&
-                Objects.equals(laptopName, review.laptopName) &&
-                Objects.equals(reviewText, review.reviewText) &&
-                Objects.equals(hashTag, review.hashTag) &&
-                Objects.equals(laptopModel, review.laptopModel);
+
+        if (id != null ? !id.equals(review.id) : review.id != null) return false;
+        if (laptopName != null ? !laptopName.equals(review.laptopName) : review.laptopName != null) return false;
+        if (reviewText != null ? !reviewText.equals(review.reviewText) : review.reviewText != null) return false;
+        if (hashTag != null ? !hashTag.equals(review.hashTag) : review.hashTag != null) return false;
+        if (laptopModel != null ? !laptopModel.equals(review.laptopModel) : review.laptopModel != null) return false;
+        return laptop != null ? laptop.equals(review.laptop) : review.laptop == null;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, laptopName, reviewText, hashTag, laptopModel);
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (laptopName != null ? laptopName.hashCode() : 0);
+        result = 31 * result + (reviewText != null ? reviewText.hashCode() : 0);
+        result = 31 * result + (hashTag != null ? hashTag.hashCode() : 0);
+        result = 31 * result + (laptopModel != null ? laptopModel.hashCode() : 0);
+        result = 31 * result + (laptop != null ? laptop.hashCode() : 0);
+        return result;
     }
 }

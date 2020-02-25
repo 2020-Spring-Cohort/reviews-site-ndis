@@ -1,5 +1,6 @@
 package org.wecancodeit.reviews;
 
+import org.springframework.test.annotation.DirtiesContext;
 import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
@@ -16,7 +17,7 @@ import javax.swing.text.html.Option;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+@DirtiesContext
 @ComponentScan
 @DataJpaTest
 public class JPAWiringTest {

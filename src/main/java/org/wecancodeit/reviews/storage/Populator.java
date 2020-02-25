@@ -45,13 +45,13 @@ public class Populator implements CommandLineRunner {
         Laptop hpOne = new Laptop(hp, "hpName", "hpModel");
         laptopStorageJpaImpl.store(hpOne);
 
-        Laptop msiOne = new Laptop(hp, "msiName", "msiModel");
+        Laptop msiOne = new Laptop(msi, "msiName", "msiModel");
         laptopStorageJpaImpl.store(msiOne);
 
-        Laptop lenovoOne = new Laptop(hp, "lenovoName", "lenovoModel");
+        Laptop lenovoOne = new Laptop(lenovo, "lenovoName", "lenovoModel");
         laptopStorageJpaImpl.store(lenovoOne);
 
-        Laptop alienwareOne = new Laptop(hp, "alienwareName", "alienwareModel");
+        Laptop alienwareOne = new Laptop(alienware, "alienwareName", "alienwareModel");
         laptopStorageJpaImpl.store(alienwareOne);
 
 //        Category msi = new Category("MSI");

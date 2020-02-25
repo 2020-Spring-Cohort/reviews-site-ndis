@@ -36,17 +36,16 @@
 
         <div class="mainComputers" th:each="laptop:${category}">
             Hp Laptops
-
             <img src="./Images/HPlaptop.jpg" alt="hp" width="100px" height="auto">
-            <a href="Laptops.html" th:href="@{'/laptops/' + ${laptop}}">HP</a>
+            <a href="Laptops.html" th:href="@{'/laptops/' + ${laptop.id} }">HP</a>
 
         </div>
 
-<!--        <div class="mainComputers">-->
-<!--            AlienWare Laptops-->
-<!--            <img src="./Images/Alien.jpg" alt="Alien Laptop "width="100px" height="auto">-->
-<!--            <a href="Laptops.html" th:href="@{'/laptops/'}">AlienWare</a>-->
-<!--        </div>-->
+        <div class="mainComputers">
+            AlienWare Laptops
+            <img src="./Images/Alien.jpg" alt="Alien Laptop "width="100px" height="auto">
+            <a href="Laptops.html" th:href="@{'/laptops/'}">AlienWare</a>
+        </div>
 
 <!--        <div class="mainComputers">-->
 <!--            Msi Laptops-->
