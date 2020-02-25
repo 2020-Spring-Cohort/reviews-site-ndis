@@ -8,5 +8,6 @@ public interface LaptopStorage {
     Collection<Laptop> findAllLaptops();
 
     void store(Laptop laptop);
-    Laptop findLaptopByName (String laptopName);
+
+    Laptop findLaptopByName(String laptopName);
 }

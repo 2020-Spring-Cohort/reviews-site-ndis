@@ -12,6 +12,7 @@ import org.wecancodeit.reviews.storage.repos.CategoryRepository;
 import org.wecancodeit.reviews.storage.repos.LaptopRepository;
 import org.wecancodeit.reviews.storage.repos.ReviewRepository;
 
+import javax.swing.text.html.Option;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -20,33 +21,36 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest
 public class JPAWiringTest {
 
-@Autowired
+    @Autowired
     private CategoryRepository categoryRepository;
-@Autowired
+    @Autowired
     private LaptopRepository laptopRepository;
-@Autowired
+    @Autowired
     private ReviewRepository reviewRepository;
-@Autowired
-private TestEntityManager entityManager;
+    @Autowired
+    private TestEntityManager entityManager;
 
 
-@Test
-public void categoryShouldHaveListOfLaptops(){
-    Category testCategory = new Category("testBrand", "testName");
-    Review testReview = new Review();
-   Laptop testLaptop = new Laptop(testCategory, "testLaptopName","testModel");
+    @Test
+    public void categoryShouldHaveListOfLaptops() {
+        Category testCategory = new Category("testBrand");
+        Review testReview = new Review();
+        Laptop testLaptop = new Laptop(testCategory, "testName", "testModel");
 
 
-    categoryRepository.save(testCategory);
-    laptopRepository.save(testLaptop);
-    reviewRepository.save(testReview);
-    entityManager.flush();
-    entityManager.clear();
+        categoryRepository.save(testCategory);
+        laptopRepository.save(testLaptop);
+        reviewRepository.save(testReview);
+        entityManager.flush();
+        entityManager.clear();
 
-    Optional<Category> retrievedCategoriesOptional = categoryRepository.findById(testCategory.getId());
-    Category retrievedCategory = retrievedCategoriesOptional.get();
-    Laptop retrievedLaptop = laptopRepository.findById(testLaptop.getId()).get();
+        Optional<Category> retrievedCategoriesOptional = categoryRepository.findById(testCategory.getId());
+        Category retrievedCategory = retrievedCategoriesOptional.get();
 
-    assertThat(retrievedCategory.getLaptops()).contains(testLaptop);
-}
+        Optional<Laptop> retrievedLaptopOptional = laptopRepository.findByName(testLaptop.getName());
+        Laptop retrievedLaptop = retrievedLaptopOptional.get();
+
+        assertThat(retrievedCategory.getLaptops()).contains(testLaptop);
+        assertThat(retrievedLaptop.getReviews().contains(testReview));
+    }
 }

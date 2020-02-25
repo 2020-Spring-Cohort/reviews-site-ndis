@@ -32,7 +32,7 @@ public class WebLayerTest {
     LaptopStorage mockStorage3;
 
     @Test
-    public void categoriesShouldBeOkAndReturnTheCategoriesViewAndModelsAttribute() throws Exception{
+    public void categoriesShouldBeOkAndReturnTheCategoriesViewAndModelsAttribute() throws Exception {
         mockMvc.perform(get("/category"))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -42,18 +42,19 @@ public class WebLayerTest {
 
     @Test
     public void reviewShouldBeOkAndReturnTheReviewPageAndModelsAttribute() throws Exception {
-        Category testCategory = new Category("MSI","testName");
+        Category testCategory = new Category("MSI");
         Laptop laptop = new Laptop();
-        Review dell = new Review("",  "", "", "", laptop);
-       when(mockStorage2.findReviewByLaptopName("dell")).thenReturn(dell);
+        Review dell = new Review("", "", "", "", laptop);
+        when(mockStorage2.findReviewById(13)).thenReturn(dell);
         mockMvc.perform(get("/review-page/dell"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("review-pageView"))
                 .andExpect(model().attributeExists("review"));
     }
+
     @Test
-    public void laptopShouldBeOkReturnAllAttributes() throws Exception{
+    public void laptopShouldBeOkReturnAllAttributes() throws Exception {
         mockMvc.perform(get("/laptops"))
                 .andDo(print())
                 .andExpect(status().isOk())

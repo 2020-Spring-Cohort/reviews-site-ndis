@@ -5,9 +5,8 @@ import org.wecancodeit.reviews.models.Review;
 import java.util.Collection;
 
 public interface ReviewStorage {
-    Collection<Review> findAllReviews();
 
-    void store (Review review);
+    void store(Review review);
 
-    Review findReviewByLaptopName(String reviewLaptopName);
+    Review findReviewById(long id);
 }

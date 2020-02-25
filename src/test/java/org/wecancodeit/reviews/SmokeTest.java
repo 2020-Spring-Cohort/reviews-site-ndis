@@ -9,7 +9,7 @@ import org.springframework.test.annotation.DirtiesContext;
 @SpringBootTest
 public class SmokeTest {
     @Test
-    void contextLoads(){
+    void contextLoads() {
 
     }
 }

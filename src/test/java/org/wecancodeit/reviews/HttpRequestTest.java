@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.annotation.DirtiesContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
 @DirtiesContext
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class HttpRequestTest {
@@ -20,7 +21,7 @@ public class HttpRequestTest {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void categoriesEndPointReturnsOk(){
+    public void categoriesEndPointReturnsOk() {
         ResponseEntity<String> response = testRestTemplate.getForEntity(
                 "http://localhost:" + port + "/category", String.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

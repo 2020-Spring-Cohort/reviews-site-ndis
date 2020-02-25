@@ -2,7 +2,6 @@ package org.wecancodeit.reviews.models;
 
 import javax.persistence.*;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -15,7 +14,7 @@ public class Laptop {
 
     @ManyToOne
     private Category category;
-private String name;
+    private String name;
     private String model;
 
     @OneToMany
@@ -34,7 +33,9 @@ private String name;
     public Laptop() {
     }
 
-    public Collection<Review> getReviews() {return reviews;}
+    public Collection<Review> getReviews() {
+        return reviews;
+    }
 
     public String getName() {
         return name;

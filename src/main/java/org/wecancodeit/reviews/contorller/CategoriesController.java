@@ -19,12 +19,13 @@ public class CategoriesController {
     }
 
     @RequestMapping("/category")
-    public String displayCategories(Model model){
+    public String displayCategories(Model model) {
         model.addAttribute("category", categoriesStorage.findAllCategories());
         return "categoriesView";
     }
-@RequestMapping ("/category/{categoriesBrand}")
-    public String displaySingleCategory(@PathVariable String categoriesBrand, Model model){
+
+    @RequestMapping("/category/{categoriesBrand}")
+    public String displaySingleCategory(@PathVariable String categoriesBrand, Model model) {
         Category retrievedCategory = categoriesStorage.findCategoryByBrand(categoriesBrand);
         model.addAttribute("category", retrievedCategory);
         return "Laptops";

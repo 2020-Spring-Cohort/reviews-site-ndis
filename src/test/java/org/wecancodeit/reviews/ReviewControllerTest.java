@@ -22,7 +22,7 @@ public class ReviewControllerTest {
     private Model mockModel;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         mockModel = mock(Model.class);
         mockStorage = mock(ReviewStorage.class);
         underTest = new ReviewController(mockStorage);
@@ -30,21 +30,20 @@ public class ReviewControllerTest {
     }
 
 
-
     @Test
-    public void shouldReturnViewWithOneReview(){
+    public void shouldReturnViewWithOneReview() {
         Category testCategory = new Category("MSI");
         Laptop laptop = new Laptop();
         Review testReview = new Review("testLaptopName", "testHashtag", "testReviewText", "testLaptopModel", laptop);
-        when(mockStorage.findReviewByLaptopName("testReviewLaptopName")).thenReturn(testReview);
-        underTest.displaySingleReview("testReviewLaptopName", mockModel);
-        verify(mockStorage).findReviewByLaptopName("testReviewLaptopName");
+        when(mockStorage.findReviewById(13)).thenReturn(testReview);
+        underTest.displaySingleReview(13, mockModel);
+        verify(mockStorage).findReviewById(13);
         verify(mockModel).addAttribute("review", testReview);
     }
 
     @Test
-    public void shouldReturnViewNamedReviewPageViewWhenDisplaySingleReview(){
-        String viewName = underTest.displaySingleReview("testReviewLaptopName", mockModel);
+    public void shouldReturnViewNamedReviewPageViewWhenDisplaySingleReview() {
+        String viewName = underTest.displaySingleReview(13, mockModel);
         assertThat(viewName).isEqualTo("review-pageView");
     }
 }

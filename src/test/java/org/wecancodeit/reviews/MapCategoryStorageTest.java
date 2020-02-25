@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MapCategoryStorageTest {
     @Test
     public void shouldStoreCategoriesInMap() {
-        Category testCategory = new Category("MSI", "testName");
+        Category testCategory = new Category("MSI");
         CategoriesStorage underTest = new MapCategoriesStorage();
         underTest.store(testCategory);
         assertThat(underTest.findAllCategories().contains(testCategory));
@@ -18,8 +18,8 @@ public class MapCategoryStorageTest {
 
     @Test
     public void shouldRetrieveSingleCategory() {
-        Category testCategory = new Category("Test", "testName");
-        Category testCategory2 = new Category("Msi","testName");
+        Category testCategory = new Category("Test");
+        Category testCategory2 = new Category("Msi");
         MapCategoriesStorage underTest = new MapCategoriesStorage();
         underTest.store(testCategory);
         underTest.store(testCategory2);

@@ -19,7 +19,8 @@ public class Review {
     @ManyToOne
     private Laptop laptop;
 
-    public Review(){}
+    public Review() {
+    }
 
     public Review(String laptopName, String hashTag, String reviewText, String laptopModel, Laptop laptop) {
         this.laptopName = laptopName;

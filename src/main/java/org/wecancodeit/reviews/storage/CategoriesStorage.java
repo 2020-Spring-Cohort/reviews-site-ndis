@@ -8,5 +8,6 @@ public interface CategoriesStorage {
     Collection<Category> findAllCategories();
 
     void store(Category category);
-    Category findCategoryByBrand (String categoryBrand);
+
+    Category findCategoryByBrand(String categoryBrand);
 }

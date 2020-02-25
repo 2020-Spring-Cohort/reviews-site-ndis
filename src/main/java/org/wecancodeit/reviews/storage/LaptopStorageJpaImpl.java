@@ -11,14 +11,14 @@ public class LaptopStorageJpaImpl implements LaptopStorage {
 
     private LaptopRepository laptopRepository;
 
-    public LaptopStorageJpaImpl (LaptopRepository laptopRepository){
+    public LaptopStorageJpaImpl(LaptopRepository laptopRepository) {
         this.laptopRepository = laptopRepository;
     }
 
 
     @Override
     public Collection<Laptop> findAllLaptops() {
-        return (Collection<Laptop>)laptopRepository.findAll();
+        return (Collection<Laptop>) laptopRepository.findAll();
     }
 
     @Override
@@ -29,7 +29,7 @@ public class LaptopStorageJpaImpl implements LaptopStorage {
     }
 
     @Override
-    public Laptop findLaptopByName(String laptopName) {
-        return laptopRepository.findByName(laptopName).get();
+    public Laptop findLaptopByName(String name) {
+        return laptopRepository.findByName(name).get();
     }
 }

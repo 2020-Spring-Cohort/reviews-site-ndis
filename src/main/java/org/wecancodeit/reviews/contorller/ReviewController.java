@@ -11,13 +11,13 @@ import org.wecancodeit.reviews.storage.ReviewStorage;
 public class ReviewController {
     private ReviewStorage reviewStorage;
 
-    public ReviewController(ReviewStorage reviewStorage){
+    public ReviewController(ReviewStorage reviewStorage) {
         this.reviewStorage = reviewStorage;
     }
 
-    @RequestMapping("/review-page/{reviewLaptopName}")
-    public String displaySingleReview(@PathVariable String reviewLaptopName, Model model){
-        Review retrievedReview = reviewStorage.findReviewByLaptopName(reviewLaptopName);
+    @RequestMapping("/review-page/{id}")
+    public String displaySingleReview(@PathVariable long id, Model model) {
+        Review retrievedReview = reviewStorage.findReviewById(id);
         model.addAttribute("review", retrievedReview);
         return "review-pageView";
     }

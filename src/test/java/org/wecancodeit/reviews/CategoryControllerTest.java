@@ -1,4 +1,5 @@
 package org.wecancodeit.reviews;
+
 import org.wecancodeit.reviews.contorller.CategoriesController;
 import org.wecancodeit.reviews.models.Category;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +36,7 @@ public class CategoryControllerTest {
 
     @Test
     public void categoryControllerShouldInstantiate() throws Exception {
-        Category testCategory = new Category("MSI", "asjhdbf");
+        Category testCategory = new Category("testBrand");
         List<Category> categoryCollection = Collections.singletonList(testCategory);
         when(mockStorage.findAllCategories()).thenReturn(categoryCollection);
         mockMvc.perform(get("/category"))
@@ -45,17 +46,18 @@ public class CategoryControllerTest {
                 .andExpect(model().attributeExists("category"))
                 .andExpect(model().attribute("category", categoryCollection));
     }
+
     @Test
-    public void shouldReturnViewWithOneCategory(){
-        Category testCategory = new Category("Brands","asdjfb");
+    public void shouldReturnViewWithOneCategory() {
+        Category testCategory = new Category("testBrand");
         when(mockStorage.findCategoryByBrand("MSI")).thenReturn(testCategory);
         underTest.displaySingleCategory("MSI", mockModel);
         verify(mockStorage).findCategoryByBrand("MSI");
-        verify(mockModel).addAttribute("category",testCategory);
+        verify(mockModel).addAttribute("category", testCategory);
     }
 
     @Test
-    public void shouldReturnViewNamedCategoryWhenDisplaySingleCategory(){
+    public void shouldReturnViewNamedCategoryWhenDisplaySingleCategory() {
         String viewName = underTest.displaySingleCategory("test", mockModel);
         assertThat(viewName).isEqualTo("Laptops");
     }

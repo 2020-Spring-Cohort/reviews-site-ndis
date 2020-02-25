@@ -6,20 +6,22 @@ import org.wecancodeit.reviews.models.Review;
 import java.util.Collection;
 import java.util.HashMap;
 
-@Service
+
 public class MapReviewStorage implements ReviewStorage {
     private HashMap<String, Review> reviewList;
 
-    public MapReviewStorage(){reviewList = new HashMap<>();}
+    public MapReviewStorage() {
+        reviewList = new HashMap<>();
+    }
+
 
     @Override
-    public Collection<Review> findAllReviews(){return reviewList.values();}
+    public void store(Review review) {
+        reviewList.put("",review);
+    }
 
     @Override
-    public void store(Review review){reviewList.put(review.getLaptopName(), review);}
-
-    @Override
-    public Review findReviewByLaptopName(String reviewLaptopName){
-        return reviewList.get(reviewLaptopName);
+    public Review findReviewById(long id) {
+        return reviewList.get(id);
     }
 }
