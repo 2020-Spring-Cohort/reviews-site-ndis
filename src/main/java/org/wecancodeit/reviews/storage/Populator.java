@@ -13,15 +13,17 @@ public class Populator implements CommandLineRunner {
 
     private CategoryStorageJpaImpl categoryStorageJpaImpl;
     private LaptopStorageJpaImpl laptopStorageJpaImpl;
+    private ReviewJpaImpl reviewJpa;
     //    private LaptopStorage laptopStorage;
-    private ReviewStorage reviewStorage;
+//    private ReviewStorage reviewStorage;
 
 
-    public Populator(CategoryStorageJpaImpl categoryStorageJpaImpl, LaptopStorageJpaImpl laptopStorageJpaImpl, ReviewStorage reviewStorage) {
+    public Populator(CategoryStorageJpaImpl categoryStorageJpaImpl, LaptopStorageJpaImpl laptopStorageJpaImpl, ReviewJpaImpl reviewJpa) {
         this.categoryStorageJpaImpl = categoryStorageJpaImpl;
         this.laptopStorageJpaImpl = laptopStorageJpaImpl;
+        this.reviewJpa = reviewJpa;
 //        this.laptopStorage = laptopStorage;
-        this.reviewStorage = reviewStorage;
+//        this.reviewStorage = reviewStorage;
     }
 
     @Override
@@ -73,7 +75,16 @@ public class Populator implements CommandLineRunner {
 //        reviewStorage.store(review1);
 
         Review review1 = new Review("hpOne", "#test", "reviewText", "laptopModel", hpOne);
-        reviewStorage.store(review1);
+        reviewJpa.store(review1);
+
+        Review review2 = new Review("msiOne", "#test", "reviewText", "laptopModel", msiOne);
+        reviewJpa.store(review2);
+
+        Review review3 = new Review("lenovoOne", "#test", "reviewText", "laptopModel", lenovoOne);
+        reviewJpa.store(review3);
+
+        Review review4 = new Review("alienwareOne", "#test", "reviewText", "laptopModel", alienwareOne);
+        reviewJpa.store(review4);
 
     }
 }
