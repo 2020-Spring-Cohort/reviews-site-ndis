@@ -19,7 +19,7 @@ public class ReviewController {
     public String displaySingleReview(@PathVariable long id, Model model) {
         Review retrievedReview = reviewStorage.findReviewById(id);
         model.addAttribute("review", retrievedReview);
-        return "review-pageView";
+        return "review-page";
 
     }
 }
