@@ -10,4 +10,6 @@ public interface LaptopStorage {
     void store(Laptop laptop);
 
     Laptop findLaptopByName(String laptopName);
+
+    Laptop findAllReviewsForOneLaptop();
 }

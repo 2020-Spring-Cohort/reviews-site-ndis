@@ -30,5 +30,12 @@ public class LaptopController {
         return "review-pageView";
     }
 
+    @RequestMapping("/laptop/")
+    public String displayAllReviewsForOneLaptop( Model model ){
+        model.addAttribute("laptop", laptopStorage.findAllReviewsForOneLaptop());
+        return "laptop";
+
+
+    }
 
 }

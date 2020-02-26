@@ -32,4 +32,10 @@ public class LaptopStorageJpaImpl implements LaptopStorage {
     public Laptop findLaptopByName(String name) {
         return laptopRepository.findByName(name).get();
     }
+
+    @Override
+    public Laptop findAllReviewsForOneLaptop() {
+        return null;
+    }
+
 }

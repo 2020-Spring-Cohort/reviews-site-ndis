@@ -20,7 +20,7 @@ public class CategoriesController {
 
     @RequestMapping("/category")
     public String displayCategories(Model model) {
-        model.addAttribute("category", categoriesStorage.findAllCategories());
+        model.addAttribute("categories", categoriesStorage.findAllCategories());
         return "categoriesView";
     }
 

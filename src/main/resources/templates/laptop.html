@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Review </title>
+    <link rel="stylesheet" href = "./CSS/style.css">
+    <link rel="stylesheet" href = "./CSS/layout.css">
+</head>
+
+
+    <div class="indexHash">
+        <div class="category-button">
+            <a href="categoriesView.html" th:href="@{/categoriesView}">Categories</a>
+        </div>
+
+        <div class="hashtags-button">
+            <a href="Hashtags.html" th:href="@{/Hashtags}">#Hashtags</a>
+
+        </div>
+    </div>
+
+<body>
+all reviews from one specific laptop
+
+<div class="mainBody">
+    <div class="mainComputers" th:each="laptop: ${laptop.}" >
+
+
+
+
+
+
+</body>
+</html>

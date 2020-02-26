@@ -24,30 +24,38 @@
     </div>
 </div>
 
-<body class="mainBody">
+<body>
 
 
-<div class="mainComputers">
 
 <!--    <h2 th:each="laptop: ${laptops}"><a th:text="${laptop.brand}" th:href="@{'/laptops/' + ${laptop.brand}}">Laptops</a></h2>-->
+<div class="mainBody">
+<div class="mainComputers" th:each="laptop: ${category.laptops}" >
 
-<div th:each="laptop: ${laptops}" >
+    <h2 th:text="${category.brand}" class="mainComputers">Brand</h2>
+    <h2 th:text="${laptop.name}" class="mainComputers">Name</h2>
+    <h2 th:text="${laptop.model}" class="mainComputers">Model</h2>
+<!--    <img th:src="${laptop.URL}" alt="hp" width="100px" height="auto">-->
+    <a  th:href="@{'/laptops/' + ${laptop.name}}" th:text="${laptop.name}"></a>
 
-    <h2 th:text="${category}" class="selectedBrand">Brand</h2>
-    <h2 th:text="${laptop.name}" class="selectedBrand">Name</h2>
-    <h2 th:text="${laptop.model}" class="selectedBrand">Model</h2>
-    <img src="" alt="hp" width="100px" height="auto">
+
+
+
+
+
+
+<!--    <div class="mainLaptops" th:each="laptops:${laptop.reviews}">-->
+<!--        <a href= "review-pageView.html" th:href="@{'/reviews-page/' + ${laptop.reviews}}"></a>-->
+
+
+<!--    </div>-->
+<!--    <div class="mainComputers" th:each="laptop:${category}">-->
+<!--        <a href="Laptops.html" th:href="@{'/laptops/' + ${laptop.brand} }"-->
+<!--           th:text="${laptop.brand}">HP</a>-->
+<!--    </div>-->
+
 
 </div>
-<!--<div class="mainComputers">-->
-<!--    <h2 th:text="${laptops.laptopBrand}" class="selectedBrand">Brand</h2>-->
-<!--    <h2 th:text="${laptops.laptopName}" class="selectedBrand">Name</h2>-->
-<!--    <h2 th:text="${laptops.laptopModel}" class="selectedBrand">Model</h2>-->
-<!--    <img src="" alt="hp" width="100px" height="auto">-->
-
-<!--</div>-->
-
-
 </div>
 </body>
 
