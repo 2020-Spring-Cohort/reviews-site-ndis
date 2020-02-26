@@ -22,11 +22,14 @@
     </div>
 
 <body>
-all reviews from one specific laptop
+
 
 <div class="mainBody">
     <div class="mainComputers" th:each="review: ${laptop.reviews}" >
-    <a th:href="@{'/review-pageView/' + ${review.id}}"></a>
+        <a th:href="@{'/review-pageView/' + ${review.id}}"></a>
+        
+    </div>
+</div>
 
 
 
