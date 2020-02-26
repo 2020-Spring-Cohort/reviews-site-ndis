@@ -22,8 +22,7 @@ public class Populator implements CommandLineRunner {
         this.categoryStorageJpaImpl = categoryStorageJpaImpl;
         this.laptopStorageJpaImpl = laptopStorageJpaImpl;
         this.reviewJpa = reviewJpa;
-//        this.laptopStorage = laptopStorage;
-//        this.reviewStorage = reviewStorage;
+
     }
 
     @Override
@@ -54,25 +53,6 @@ public class Populator implements CommandLineRunner {
         Laptop alienwareOne = new Laptop(alienware, "alienwareName", "alienwareModel");
         laptopStorageJpaImpl.store(alienwareOne);
 
-//        Category msi = new Category("MSI");
-//        Laptop predator = new Laptop(msi, "testLaptopName", "testModel");
-//        laptopStorage.store(predator);
-//
-//        Category hp = new Category("HP");
-//        Laptop hpJunk = new Laptop(hp, "testLaptopName", "testModel");
-//        laptopStorage.store(hpJunk);
-//
-//        Category alien = new Category("AlienWare");
-//        Laptop aurora = new Laptop(alien, "testLaptopName", "testModel");
-//        laptopStorage.store(aurora);
-//
-//        Category lenovo = new Category("Lenovo");
-//        Laptop thinkPad = new Laptop(lenovo, "testLaptopName", "testModel");
-//        laptopStorage.store(thinkPad);
-
-//
-//        Review review1 = new Review();
-//        reviewStorage.store(review1);
 
         Review review1 = new Review("hpOne", "#test", "reviewText", "laptopModel", hpOne);
         reviewJpa.store(review1);
