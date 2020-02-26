@@ -78,40 +78,40 @@ public class Populator implements CommandLineRunner {
         laptopStorageJpaImpl.store(alienwareFour);
 
 
-        Review review1 = new Review("hpOne", "#test", "reviewText", "laptopModel", hpOne);
+        Review review1 = new Review("Envy", "#test", "reviewText", "laptopModel", hpOne);
         reviewJpa.store(review1);
-        Review review2 = new Review("hpOnee", "#test", "reviewText", "laptopModel", hpOne);
+        Review review2 = new Review("HP14", "#test", "reviewText", "laptopModel", hpTwo);
         reviewJpa.store(review2);
-        Review review3 = new Review("hpOnee", "#test", "reviewText", "laptopModel", hpOne);
+        Review review3 = new Review("Pavilion", "#test", "reviewText", "laptopModel", hpThree);
         reviewJpa.store(review3);
-        Review review4 = new Review("hpOnee", "#test", "reviewText", "laptopModel", hpOne);
+        Review review4 = new Review("Envy x360", "#test", "reviewText", "laptopModel", hpFour);
         reviewJpa.store(review4);
 
-        Review review5 = new Review("msiOne", "#test", "reviewText", "laptopModel", msiOne);
+        Review review5 = new Review("GS75", "#test", "reviewText", "laptopModel", msiOne);
         reviewJpa.store(review5);
-        Review review6 = new Review("msiOnee", "#test", "reviewText", "laptopModel", msiOne);
+        Review review6 = new Review("P65", "#test", "reviewText", "laptopModel", msiTwo);
         reviewJpa.store(review6);
-        Review review7 = new Review("msiOnee", "#test", "reviewText", "laptopModel", msiOne);
+        Review review7 = new Review("PS42", "#test", "reviewText", "laptopModel", msiThree);
         reviewJpa.store(review7);
-        Review review8 = new Review("msiOnee", "#test", "reviewText", "laptopModel", msiOne);
+        Review review8 = new Review("CUK", "#test", "reviewText", "laptopModel", msiFour);
         reviewJpa.store(review8);
 
-        Review review9 = new Review("lenovoOne", "#test", "reviewText", "laptopModel", lenovoOne);
+        Review review9 = new Review("ThinkPad", "#test", "reviewText", "laptopModel", lenovoOne);
         reviewJpa.store(review9);
-        Review review10 = new Review("lenovoOnee", "#test", "reviewText", "laptopModel", lenovoOne);
+        Review review10 = new Review("Yoga", "#test", "reviewText", "laptopModel", lenovoTwo);
         reviewJpa.store(review10);
-        Review review11 = new Review("lenovoOnee", "#test", "reviewText", "laptopModel", lenovoOne);
+        Review review11 = new Review("IdeaPad", "#test", "reviewText", "laptopModel", lenovoThree);
         reviewJpa.store(review11);
-        Review review12 = new Review("lenovoOnee", "#test", "reviewText", "laptopModel", lenovoOne);
+        Review review12 = new Review("Flex", "#test", "reviewText", "laptopModel", lenovoFour);
         reviewJpa.store(review12);
 
-        Review review13 = new Review("alienwareOne", "#test", "reviewText", "laptopModel", alienwareOne);
+        Review review13 = new Review("Alienware17", "#test", "reviewText", "laptopModel", alienwareOne);
         reviewJpa.store(review13);
-        Review review14 = new Review("alienwareOnee", "#test", "reviewText", "laptopModel", alienwareOne);
+        Review review14 = new Review("AlienwareM17", "#test", "reviewText", "laptopModel", alienwareTwo);
         reviewJpa.store(review14);
-        Review review15 = new Review("alienwareOnee", "#test", "reviewText", "laptopModel", alienwareOne);
+        Review review15 = new Review("AlienwareM15", "#test", "reviewText", "laptopModel", alienwareThree);
         reviewJpa.store(review15);
-        Review review16 = new Review("alienwareOnee", "#test", "reviewText", "laptopModel", alienwareOne);
+        Review review16 = new Review("AlienwareR5", "#test", "reviewText", "laptopModel", alienwareFour);
         reviewJpa.store(review16);
 
     }
