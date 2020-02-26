@@ -30,12 +30,12 @@ public class LaptopController {
         return "laptop";
     }
 
-    @RequestMapping("/laptop/")
-    public String displayAllReviewsForOneLaptop( Model model ){
-        model.addAttribute("laptop", laptopStorage.findAllReviewsForOneLaptop());
-        return "";
-
-
-    }
+//    @RequestMapping("/laptop/")
+//    public String displayAllReviewsForOneLaptop( Model model ){
+//        model.addAttribute("laptop", laptopStorage.findAllReviewsForOneLaptop());
+//        return "";
+//
+//
+//    }
 
 }

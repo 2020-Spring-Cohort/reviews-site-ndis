@@ -17,7 +17,7 @@ public class Laptop {
     private String name;
     private String model;
 
-    @OneToMany
+    @OneToMany(mappedBy = "laptop")
     private Collection<Review> reviews;
 
 

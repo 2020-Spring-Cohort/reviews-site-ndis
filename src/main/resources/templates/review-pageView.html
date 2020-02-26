@@ -34,10 +34,16 @@
 <body>
     <div class="review-photo"><img src="./Images/MSI GF63 Thin 9RCX -615.jpg" alt="This is MSI laptop picture"></div>
     <p th:text="${review.laptopModel}" class="laptop-details__model">2345GNTW</p>
+    <div>
+    <p th:text="${review.reviewText}" class="laptop-details__review"> this is a review of a MSI laptop</p>
+    </div>
+
+<!--<form method="POST" th:action="'/review-pageView' + ${review.}"-->
+
 </body>
 
 <footer>
-<p th:text="${review.reviewText}" class="laptop-details__review"> this is a review of a MSI laptop</p>
+
 </footer>
 
 
