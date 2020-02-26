@@ -15,10 +15,6 @@ public class ReviewController {
         this.reviewStorage = reviewStorage;
     }
 
-
-
-
-
     @RequestMapping("/review-page/{id}")
     public String displaySingleReview(@PathVariable long id, Model model) {
         Review retrievedReview = reviewStorage.findReviewById(id);
