@@ -29,8 +29,8 @@
     </div>
 
 
-    <form action="add-review" method="POST">
-        <input type="text"name="laptopName"/>
+    <form th:action="'/'+${laptop.id}+'/add-review'" method="POST">
+        <input type="text"name="reviewText">
         <button type="submit">Submit</button>
     </form>
 

@@ -79,4 +79,16 @@ public class Review {
         result = 31 * result + (laptop != null ? laptop.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "id=" + id +
+                ", laptopName='" + laptopName + '\'' +
+                ", reviewText='" + reviewText + '\'' +
+                ", hashTag='" + hashTag + '\'' +
+                ", laptopModel='" + laptopModel + '\'' +
+                ", laptop=" + laptop +
+                '}';
+    }
 }

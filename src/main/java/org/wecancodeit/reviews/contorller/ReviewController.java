@@ -10,13 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.reviews.storage.ReviewStorage;
+import org.wecancodeit.reviews.storage.repos.LaptopRepository;
 
 @Controller
 public class ReviewController {
     private ReviewStorage reviewStorage;
+    private LaptopRepository laptopRepository;
 
-    public ReviewController(ReviewStorage reviewStorage) {
+    public ReviewController(ReviewStorage reviewStorage, LaptopRepository laptopRepository) {
         this.reviewStorage = reviewStorage;
+        this.laptopRepository = laptopRepository;
     }
 
     @RequestMapping("/review-page/{id}")
@@ -27,9 +30,10 @@ public class ReviewController {
 
     }
 
-    @PostMapping("/add-review")
-    public String addReview(@RequestParam String laptopName ){
-        reviewStorage.store(new Review(laptopName));
-        return "redirect:review-page/{id}";
+    @PostMapping("/{id}/add-review")
+    public String addReview(@PathVariable Long id, @RequestParam String reviewText){
+        Laptop laptop = laptopRepository.findById(id).get();
+        reviewStorage.store(new Review(laptop.getName(), "", reviewText, laptop.getModel(), laptop));
+        return "redirect:/laptops/" + laptop.getName();
     }
 }
