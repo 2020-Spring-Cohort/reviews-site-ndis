@@ -1,5 +1,9 @@
 package org.wecancodeit.reviews.contorller;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
+import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,4 +26,10 @@ public class ReviewController {
         return "review-page";
 
     }
+
+//    @PostMapping("/add-review")
+//    public String addReview(@RequestParam String laptopName ){
+//        reviewStorage.store(new Review(addReview("")));
+//        return "redirect:review-page/{id}";
+//    }
 }

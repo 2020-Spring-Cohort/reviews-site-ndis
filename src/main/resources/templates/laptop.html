@@ -32,8 +32,19 @@
 
     </div>
 </div>
+<div>
 
+    <form action="add-review" method="POST">
+        <input type="text"name="laptopName"/>
+        <button type="submit">Submit</button>
+    </form>
+<!--<form method="POST" th:action="'/review-page' + ${review.reviewText} +'/add-review'">-->
 
+<!--    <input name="reviewID" th:value="${review.id}" type="hidden">-->
+<!--    <input type="text">-->
+
+<!--</form>-->
+</div>
 
 
 </body>
