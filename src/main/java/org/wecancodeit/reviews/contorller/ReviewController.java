@@ -27,9 +27,9 @@ public class ReviewController {
 
     }
 
-//    @PostMapping("/add-review")
-//    public String addReview(@RequestParam String laptopName ){
-//        reviewStorage.store(new Review(addReview("")));
-//        return "redirect:review-page/{id}";
-//    }
+    @PostMapping("/add-review")
+    public String addReview(@RequestParam String laptopName ){
+        reviewStorage.store(new Review(laptopName)));
+        return "redirect:review-page/{id}";
+    }
 }
