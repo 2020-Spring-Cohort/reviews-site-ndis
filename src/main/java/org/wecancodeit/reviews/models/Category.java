@@ -2,7 +2,7 @@ package org.wecancodeit.reviews.models;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Objects;
+
 
 @Entity
 public class Category {

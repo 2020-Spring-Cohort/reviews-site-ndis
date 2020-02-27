@@ -23,9 +23,7 @@ public class LaptopStorageJpaImpl implements LaptopStorage {
 
     @Override
     public void store(Laptop laptop) {
-
         laptopRepository.save(laptop);
-
     }
 
     @Override

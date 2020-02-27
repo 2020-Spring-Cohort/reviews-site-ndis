@@ -10,11 +10,9 @@ import org.wecancodeit.reviews.storage.CategoriesStorage;
 
 @Controller
 public class CategoriesController {
-
     private CategoriesStorage categoriesStorage;
 
     public CategoriesController(CategoriesStorage categoriesStorage) {
-
         this.categoriesStorage = categoriesStorage;
     }
 

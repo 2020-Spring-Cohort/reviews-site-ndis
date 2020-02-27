@@ -1,7 +1,6 @@
 package org.wecancodeit.reviews.contorller;
 
 
-import org.springframework.web.bind.annotation.PostMapping;
 import org.wecancodeit.reviews.models.Laptop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

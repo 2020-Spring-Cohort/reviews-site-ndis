@@ -1,7 +1,5 @@
 package org.wecancodeit.reviews.storage;
 
-import ch.qos.logback.core.util.DefaultInvocationGate;
-import org.springframework.jca.cci.CannotGetCciConnectionException;
 import org.wecancodeit.reviews.models.Category;
 import org.wecancodeit.reviews.models.Laptop;
 import org.wecancodeit.reviews.models.Review;
@@ -20,7 +18,6 @@ public class Populator implements CommandLineRunner {
         this.categoryStorageJpaImpl = categoryStorageJpaImpl;
         this.laptopStorageJpaImpl = laptopStorageJpaImpl;
         this.reviewJpa = reviewJpa;
-
     }
 
     @Override

@@ -7,7 +7,6 @@ import org.wecancodeit.reviews.storage.LaptopStorage;
 import org.wecancodeit.reviews.storage.LaptopStorageJpaImpl;
 import org.wecancodeit.reviews.storage.repos.LaptopRepository;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 
