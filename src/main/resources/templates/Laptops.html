@@ -3,62 +3,38 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Categories </title>
-    <link rel="stylesheet" href = "./CSS/style.css">
-    <link rel="stylesheet" href = "./CSS/layout.css">
-
+    <title>Laptops</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/layout.css">
 </head>
 
 
 <div class="indexHash">
-
-
     <div class="category-button">
         <a href="categoriesView.html" th:href="@{'/category'}">Categories</a>
-
-
     </div>
 
         <div class="hashtags-button">
             <a href="Hashtags.html" th:href="@{'/hasthtags'}">#Hashtags</a>
-
-    </div>
+        </div>
 </div>
+
 
 <body>
 
-
-
-<!--    <h2 th:each="laptop: ${laptops}"><a th:text="${laptop.brand}" th:href="@{'/laptops/' + ${laptop.brand}}">Laptops</a></h2>-->
-<div class="mainBody">
-<div class="mainComputers" th:each="laptop: ${category.laptops}" >
-
-    <h2 th:text="${category.brand}" class="mainComputers">Brand</h2>
-    <h2 th:text="${laptop.name}" class="mainComputers">Name</h2>
-    <h2 th:text="${laptop.model}" class="mainComputers">Model</h2>
-<!--    <img th:src="${laptop.URL}" alt="hp" width="100px" height="auto">-->
-    <a  th:href="@{'/laptops/' + ${laptop.name}}" th:text="${laptop.name}"></a>
-
+    <div class="mainBody">
+        <div class="mainComputers" th:each="laptop: ${category.laptops}" >
+            <h2 th:text="${category.brand}">Brand</h2>
+            <h2 th:text="${laptop.name}">Name</h2>
+            <h2 th:text="${laptop.model}">Model</h2>
+            <!--    <img th:src="${laptop.URL}" alt="hp" width="100px" height="auto">-->
+            <a  th:href="@{'/laptops/' + ${laptop.name}}" th:text="${laptop.name}"></a>
+        </div>
+    </div>
 
 
 
 
 
-<!--    <div class="mainLaptops" th:each="laptops:${laptop.reviews}">-->
-<!--        <a href= "review-page.html" th:href="@{'/reviews-page/' + ${laptop.reviews}}"></a>-->
-
-
-<!--    </div>-->
-<!--    <div class="mainComputers" th:each="laptop:${category}">-->
-<!--        <a href="Laptops.html" th:href="@{'/laptops/' + ${laptop.brand} }"-->
-<!--           th:text="${laptop.brand}">HP</a>-->
-<!--    </div>-->
-
-
-</div>
-</div>
 </body>
-
-
-
 </html>

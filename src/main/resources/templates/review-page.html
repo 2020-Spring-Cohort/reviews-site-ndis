@@ -2,27 +2,21 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Review </title>
-<link rel="stylesheet" href = "./CSS/style.css">
-<link rel="stylesheet" href = "./CSS/layout.css">
-
-
+    <link rel="stylesheet" href = "./CSS/style.css">
+    <link rel="stylesheet" href = "./CSS/layout.css">
 </head>
 
-<div class="indexHash">
-
-    <div class="category-button">
-        <a href="categoriesView.html" th:href="@{'/category'}">Categories</a>
-
-    </div>
-
-    <div class="hashtags-button">
-        <a href="Hashtags.html" th:href="@{'/hasthtags'}">#Hashtags</a>
+    <div class="indexHash">
+        <div class="category-button">
+            <a href="categoriesView.html" th:href="@{'/category'}">Categories</a>
+        </div>
+        <div class="hashtags-button">
+            <a href="Hashtags.html" th:href="@{'/hasthtags'}">#Hashtags</a>
+        </div>
 
     </div>
-
-</div>
 
 
 <body>
@@ -30,7 +24,6 @@
     <div>
     <p th:text="${review.reviewText}" class="laptop-details__review"> this is a review of a MSI laptop</p>
     </div>
-
 
 
 </body>
