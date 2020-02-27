@@ -14,8 +14,6 @@ public class Populator implements CommandLineRunner {
     private CategoryStorageJpaImpl categoryStorageJpaImpl;
     private LaptopStorageJpaImpl laptopStorageJpaImpl;
     private ReviewJpaImpl reviewJpa;
-    //    private LaptopStorage laptopStorage;
-//    private ReviewStorage reviewStorage;
 
 
     public Populator(CategoryStorageJpaImpl categoryStorageJpaImpl, LaptopStorageJpaImpl laptopStorageJpaImpl, ReviewJpaImpl reviewJpa) {

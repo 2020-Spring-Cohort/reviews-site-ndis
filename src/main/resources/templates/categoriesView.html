@@ -10,17 +10,16 @@
 </head>
 
 
+<body>
 <div class="indexHash">
     <div class="category-button">
         <a href="categoriesView.html" th:href="@{'/category'}">Categories</a>
     </div>
 
-    <div class="hashtags-button">
-        <a href="Hashtags.html" th:href="@{'/hasthtags'}">#Hashtags</a>
-    </div>
+
 </div>
 
-<body>
+
     <div class="mainBody">
         <div class="mainComputers" th:each="category:${categories}">
             <a th:href="@{'/category/' + ${category.brand}}"
@@ -31,6 +30,7 @@
 </body>
 
 <footer>
+    <div class="description-footer"><p> Here are the brands!</p></div>
 </footer>
 
 </html>

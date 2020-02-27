@@ -4,32 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Review </title>
-    <link rel="stylesheet" href = "./CSS/style.css">
-    <link rel="stylesheet" href = "./CSS/layout.css">
+    <link rel="stylesheet" href = "../CSS/style.css">
+    <link rel="stylesheet" href = "../CSS/layout.css">
 </head>
-
+<body>
     <div class="indexHash">
         <div class="category-button">
             <a href="categoriesView.html" th:href="@{'/category'}">Categories</a>
         </div>
-        <div class="hashtags-button">
-            <a href="Hashtags.html" th:href="@{'/hasthtags'}">#Hashtags</a>
-        </div>
 
     </div>
 
 
-<body>
-    <p th:text="${review.laptopName}" class="laptop-details__name">2345GNTW</p>
-    <div>
-    <p th:text="${review.reviewText}" class="laptop-details__review"> this is a review of a MSI laptop</p>
-    </div>
 
+    <div class="laptop-details">
+    <p th:text="${review.laptopName}"></p>
+    <p th:text="${review.reviewText}"></p>
+    </div>
 
 </body>
 
 <footer>
-
+<div class="description-footer"><p>Thank you for submitting a review!</p></div>
 </footer>
 
 

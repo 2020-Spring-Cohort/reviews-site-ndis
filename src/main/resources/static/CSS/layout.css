@@ -3,28 +3,31 @@
     justify-content: center;
     width: auto;
     height: auto;
+    padding: 20px;
 }
 
 .categories-button{
     justify-content: center;
     display: flex;
+    margin: 5px;
+    padding: 5px;
 }
-
-.categories-button  a:link, a:visited{
-    color: black;
-    text-decoration: none;
-}
-
-
-.hashtags-button{
+a{
     justify-content: center;
     display: flex;
 }
-.hashtags-button a:link, a:visited{
-    color: black;
-    text-decoration: none;
+
+h2{
+    display: flex;
+    font-size: 20px;
+    margin: 0px;
+    justify-content: center;
 }
 
+.categories-button  a:link, a:visited{
+    text-decoration: none;
+    justify-content: center;
+}
 
 .mainBody{
     display: grid;
@@ -37,23 +40,26 @@
     justify-content: center;
     width: auto;
     height: auto;
+    border-radius: 20px;
 }
 
 .indexBody{
-    display: grid;
-    grid-template-columns: 200px 200px;
-    column-gap: 100px;
+    display: flex;
     margin: 50px;
     padding: 50px;
     justify-content: center;
     width: auto;
     height: auto;
+    font-size: 20px;
+    border-radius: 20px;
 }
 
 .mainComputers{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: auto;
+    font-size: 20px;
+    margin: 0px;
 }
 
 footer{
@@ -61,6 +67,16 @@ footer{
     justify-content: center;
     width: auto;
     height: auto;
+    padding: 10px;
+    font-size: 20px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    font-size: 20px;
 }
 
 .review-photo{
@@ -71,18 +87,26 @@ footer{
 }
 
 .indexHash{
-    display: grid;
-    grid-template-columns: 100px 100px;
-    column-gap: 50px;
+    display: flex;
     margin: 25px;
     padding: 25px;
     justify-content: center;
     width: auto;
     height: auto;
+    font-size: 20px;
 }
 
 .hashBody{
     display: flex;
     justify-content: center;
     text-align: center;
+}
+.laptop-details{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
 }
